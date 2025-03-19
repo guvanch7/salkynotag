@@ -1,0 +1,318 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap'); */
+
+h1,
+div,
+ol,
+ul,
+h2,
+h3,
+h4,
+h5,
+h6,
+a,
+Link,
+.navlink,
+p,
+span,
+select,
+option {
+  font-family: 'Myriad Variable Concept Light C', sans-serif;
+}
+
+
+.nav-link {
+  font-weight: bold;
+}
+
+/* HEADER */
+.parallax-header {
+  height: 100px;
+}
+
+.text-header {
+  position: absolute;
+  top: 60%;
+  width: 850px;
+}
+
+
+@media (max-width: 768px) {
+  .parallax-header {
+    height: 900px;
+    /* Уменьшаем высоту */
+  }
+
+  .parallax-header .display-3 {
+    font-size: 2rem;
+    /* Уменьшаем размер шрифта */
+  }
+
+  .positionary {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+}
+
+.s-prod-list__item {
+  border: 1px solid #fff;
+  box-shadow: 4px 15px 24px -8px rgba(73, 75, 89, .04);
+  background: #f4f4f4;
+  border-radius: 24px;
+}
+
+/* Адаптивность для планшетов */
+@media (max-width: 992px) {
+  .positionary {
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .counters-container {
+    margin-top: 0;
+  }
+}
+
+/* Адаптивность для мобильных */
+@media (max-width: 576px) {
+  .positionary {
+    margin: 0 auto;
+    text-align: center;
+  }
+}
+
+/* SLIDER HEADER */
+.btn-design {
+  height: 1rem;
+  width: 1rem;
+  box-shadow: none;
+}
+
+.header-container {
+  position: relative;
+  width: 100%;
+  height: 900px;
+}
+
+.background-wrapper {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  left: 0;
+}
+
+.background-image {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  position: absolute;
+}
+
+.slider-btn {
+  background: rgba(255, 255, 255, 0.4);
+  transition: background 0.3s ease-in-out;
+}
+
+.slider-btn.active {
+  background: white;
+}
+
+
+/* WorkProçess */
+.circle-buttons {
+  display: flex;
+
+}
+
+/* Базовые стили для кнопок-кругов */
+.circle-button {
+  width: 50px;
+  height: 50px;
+  background: none;
+  border: none;
+  padding: 0;
+  cursor: pointer;
+  position: relative;
+}
+
+.circle-button svg {
+  transform: rotate(-90deg);
+}
+
+/* Активный круг: увеличивается до scale(0.6), без заливки, с анимированной обводкой */
+.circle-button.active {
+  transform: scale(0.3);
+  transition: transform 0.3s ease;
+}
+
+.circle-button.active circle {
+  fill: none;
+  stroke: #d3d3d3;
+  /* светло-серый */
+  stroke-width: 15px;
+  stroke-dasharray: 296;
+  /* примерно 2π * 47 */
+  stroke-dashoffset: 0;
+  /* конечное состояние */
+  animation: drawBorder 5s ease-in-out forwards;
+}
+
+/* Заменили длительность вращения с 3s на 5s */
+.circle-button.active svg {
+  animation: spin 10s linear infinite;
+}
+
+/* Неактивный круг: мгновенно отображается как маленькая точка с заливкой */
+.circle-button:not(.active) {
+  transform: scale(0.1);
+  transition: none;
+}
+
+.circle-button:not(.active) circle {
+  fill: #d3d3d3;
+  stroke: none;
+}
+
+/* Анимация дорисовки обводки для активного круга */
+@keyframes drawBorder {
+  from {
+    stroke-dashoffset: 296;
+  }
+
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+
+/* Анимация вращения активного круга */
+@keyframes spin {
+  from {
+    transform: rotate(-90deg);
+  }
+
+  to {
+    transform: rotate(270deg);
+  }
+}
+
+
+/* TABS */
+
+.hori-selector {
+  display: inline-block;
+  position: absolute;
+  height: 100%;
+  top: 0px;
+  left: 0px;
+  transition-duration: 0.6s;
+  transition-timing-function: cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  color: #fff;
+  background-color: #000;
+  border-radius: 30px;
+  /* border-top-left-radius: 15px; */
+  /* border-top-right-radius: 15px; */
+  /* margin-top: 10px; */
+}
+
+.nav-tabs .nav-link {
+  /* --mdb-nav-tabs-link-font-weight: 500; */
+  /* --mdb-nav-tabs-link-font-size: 12px; */
+  /* --mdb-nav-tabs-link-color: rgba(0, 0, 0, 0.55); */
+  /* --mdb-nav-tabs-link-padding-top: 17px; */
+  /* --mdb-nav-tabs-link-padding-bottom: 5px; */
+  --mdb-nav-tabs-link-padding-x: 20px;
+  --mdb-nav-tabs-link-hover-bgc: none;
+  --mdb-nav-tabs-link-border-bottom-width: none;
+  --mdb-nav-tabs-link-active-color: #3b71ca;
+  --mdb-nav-tabs-link-active-border-color: #3b71ca;
+  border-width: 0;
+  border-bottom: var(--mdb-nav-tabs-link-border-bottom-width) solid transparent;
+  border-radius: 0;
+  text-transform: uppercase;
+  line-height: 1;
+  font-weight: var(--mdb-nav-tabs-link-font-weight);
+  font-size: var(--mdb-nav-tabs-link-font-size);
+  color: black;
+  padding: var(--mdb-nav-tabs-link-padding-top) var(--mdb-nav-tabs-link-padding-x) var(--mdb-nav-tabs-link-padding-bottom) var(--mdb-nav-tabs-link-padding-x);
+}
+
+.nav-tabs .nav-link.active {
+  color: var(--mdb-nav-tabs-link-active-color);
+  background-color: black;
+  color: white;
+  border-color: var(--mdb-nav-tabs-link-active-border-color);
+}
+
+.owl-carousel .card2 img {
+  display: unset;
+  width: 100%;
+}
+
+/* .card__img {
+  display: block;
+  width: 100%;
+  height: 20rem;
+  object-fit: cover;
+} */
+
+/*  */
+
+.filterBtn {
+  all: unset;
+  /* Убирает ВСЕ стандартные стили */
+  cursor: pointer;
+  /* Чтобы кнопка оставалась кликабельной */
+  /* display: inline-block; Для корректного отображения */
+}
+
+
+.accordion-button:not(.collapsed) {
+  color: black;
+  background-color: unset;
+  box-shadow: unset;
+}
+.accordion-flush .accordion-button:not(.collapsed) {
+  box-shadow: unset;
+  border-bottom: .1em solid rgb(179, 179, 179);
+}
+
+.accordion-header button{
+  margin-bottom: 0;
+  font-weight: 500;
+  font-size: 1.5rem;
+}
+
+.accordion-body label {
+  font-size: 1.3rem;
+
+}
+
+input[type="checkbox"] {
+  width: 18px;
+  height: 18px; 
+  margin-right: 10px;
+  accent-color: #007bff; /* Меняет цвет галочки в современных браузерах */
+}
+
+
+input[type="checkbox"]:focus,
+.filter-section div:focus {
+  outline: none;
+}
+
+.card2{
+  background-color: unset;
+  box-shadow: none;
+  cursor: pointer;
+  transition: .2s;
+}
+
+.card2:hover{
+  padding: 10px;
+  transition: .2s;
+}
+
+.card-body{
+  padding: 10px;
+}

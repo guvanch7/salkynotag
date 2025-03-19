@@ -1,0 +1,177 @@
+/* Navbar default styles */
+.topbar {
+  background-color: #f8f9fa;
+  /* Светлый фон */
+  /* height: 60px; */
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 50px;
+  font-size: 14px;
+  position: fixed;
+  width: 100%;
+  z-index: 999;
+}
+
+/* Social icons */
+.topbar .social-icons a {
+ 
+  color: #333;
+  transition: color 0.3s ease;
+}
+
+.topbar .social-icons a:hover {
+  color: #007bff;
+  /* Синий при наведении */
+}
+
+ 
+
+/* Adjust margin for the navbar to avoid overlap */
+ 
+
+
+.navbar2 {
+  background-color: transparent;
+  /* Прозрачный фон по умолчанию */
+  transition: background-color 0.3s ease;
+  box-shadow: none;
+  height: 80px;
+  margin-top: 45px;
+  /* border-radius: 1.25rem; */
+}
+
+/* Navbar when scrolled */
+.navbar.scrolled {
+  background-color: #fff;
+  margin-top: 0;
+  /* Белый фон при скролле */
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.navbar:hover {
+  background-color: #fff;
+
+}
+
+.navbar:hover .nav-link {
+  color: black !important;
+}
+
+.navbar-toggler {
+  color: white !important;
+  /* Белый цвет текста на прозрачном фоне */
+  transition: color 0.3s ease;
+}
+
+.navbar.scrolled .navbar-toggler {
+  color: black !important;
+  /* Черный цвет текста на белом фоне */
+}
+
+/* Toggler hover effect */
+.navbar.scrolled .navbar-toggler:hover {
+  color: #555 !important;
+  /* Темно-серый при наведении */
+}
+
+/* Navbar links default state (white for transparent background) */
+.navbar .nav-link {
+  color: white !important;
+  /* Белый цвет текста на прозрачном фоне */
+  transition: color 0.3s ease;
+}
+
+.navbar .nav-link:hover {
+  color: #dcdcdc !important;
+  /* Slightly lighter color on hover */
+}
+
+/* Navbar links when scrolled (black for white background) */
+.navbar.scrolled .nav-link {
+  color: black !important;
+  /* Черный цвет текста на белом фоне */
+}
+
+.navbar.scrolled .nav-link:hover {
+  color: #555 !important;
+  /* Darker gray on hover */
+}
+
+
+/* Custom select dropdown when scrolled (black text for white background) */
+.navbar.scrolled {
+  color: black;
+}
+
+/* Logo alignment adjustment */
+.navbar .navbar-brand img {
+  height: 75px;
+  transition: transform 0.3s ease;
+}
+
+.navbar.scrolled .navbar-brand img {
+  transform: scale(0.9);
+  /* Slightly smaller logo when scrolled */
+}
+
+
+
+/* General transition for smoother appearance */
+.navbar,
+.navbar .nav-link {
+  transition: all 0.3s ease;
+}
+
+
+.navbar-backdrop {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: white;
+  z-index: 998;
+  /* Ниже меню */
+  display: none;
+  opacity: 0;
+  transition: opacity 0.3s ease-in-out;
+}
+
+.navbar-backdrop.show {
+  display: block;
+  opacity: 1;
+}
+
+.navbar.menu-open {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.menu-open {
+  background-color: white;
+  transition: background-color 0.3s ease-in-out;
+}
+
+.navbar.menu-open .nav-link,
+.navbar.menu-open .dropdown-toggle,
+.navbar.menu-open .navbar-toggler-icon {
+  color: black !important;
+}
+
+.navbar.menu-open .nav-link:hover {
+  color: gray !important;
+  /* Цвет при наведении */
+}
+
+.navbar.menu-open .fa-bars {
+  color: black !important;
+  /* Цвет бургер-меню */
+}
+
+
+.language-selector select {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
