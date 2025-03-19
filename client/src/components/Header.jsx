@@ -58,7 +58,7 @@ function Header() {
             </div>
 
             {/* Затемненная маска */}
-            <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.5)" }}>
+            <div className="mask" style={{ backgroundColor: "rgba(0, 0, 0, 0.3)" }}>
                 <MDBContainer className="h-100">
                     <MDBRow className="align-items-center justify-content-lg-end h-100">
                         <MDBCol lg={12} md={12} sm={12} className="text-white mt-7">

@@ -70,6 +70,7 @@ function App() {
   }, []);
 
   const [hovered, setHovered] = useState(false);
+  console.log(openBasic);
 
 
   return (
@@ -78,49 +79,36 @@ function App() {
         <div>
 
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
-            <MDBContainer fluid className="d-flex justify-content-between align-items-center">
-              <MDBRow>
-                <div className="d-flex ps-5 align-items-center">
-                  <a className="text-white" href="mailto:info@heatcoldtm.com">
-                    <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
-                  </a>
+            <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
+              <div className="d-flex flex-wrap align-items-center gap-3">
+                <a className="text-white" href="mailto:info@heatcoldtm.com">
+                  <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
+                </a>
+                <a className="text-white" href="#">
+                  <MDBIcon className='pe-1' fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
+                </a>
+                <a className="text-white" href="tel:+99312754140">
+                  <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40
+                </a>
+              </div>
 
-                  <a className="text-white ps-5" href="#">
-                    <MDBIcon className='pe-1' fas icon="map-marker-alt" />Г. Кулиева 46 (2127) 744000, Ашхабад, Туркменистан
-                  </a>
-
-                  <a className="text-white ps-5" href="tel: +99312754140">
-                    <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40</a>
-                </div>
-              </MDBRow>
-
-
-
-
-              <div className="d-flex align-items-center gap-4">
-
-                <div className="d-flex align-items-center gap-4">
-
-                  <a href="#" className="bg-white py-1 px-2 rounded-pill">
-                    <img src={tiktok} style={{ width: '1rem' }} alt="TikTok" />
-                  </a>
-                  <a href="#" className="bg-white py-1 px-2 rounded-pill">
-                    <img src={instagram} style={{ width: '1rem' }} alt="Instagram" />
-                  </a>
-                  <a href="#" className="bg-white py-1 px-2 rounded-pill">
-                    <img src={facebook} style={{ width: '1rem' }} alt="Facebook" />
-                  </a>
-
-                  <a href="#" className="bg-white py-1 px-2 rounded-pill">
-                    <img src={youtube} style={{ width: '1rem' }} alt="Facebook" />
-                  </a>
-
-                  <a href="#" className="bg-white py-1 px-2 rounded-pill">
-                    <img src={linkedin} style={{ width: '1rem' }} alt="Facebook" />
-                  </a>
-                </div>
-                {/* Блок выбора языков */}
-
+              {/* Соц. сети */}
+              <div className="social-icons d-flex gap-2">
+                <a href="#" className="bg-white p-2 rounded-pill">
+                  <img src={tiktok} style={{ width: '1rem' }} alt="TikTok" />
+                </a>
+                <a href="#" className="bg-white p-2 rounded-pill">
+                  <img src={instagram} style={{ width: '1rem' }} alt="Instagram" />
+                </a>
+                <a href="#" className="bg-white p-2 rounded-pill">
+                  <img src={facebook} style={{ width: '1rem' }} alt="Facebook" />
+                </a>
+                <a href="#" className="bg-white p-2 rounded-pill">
+                  <img src={youtube} style={{ width: '1rem' }} alt="YouTube" />
+                </a>
+                <a href="#" className="bg-white p-2 rounded-pill">
+                  <img src={linkedin} style={{ width: '1rem' }} alt="LinkedIn" />
+                </a>
               </div>
             </MDBContainer>
           </MDBNavbar>
@@ -130,10 +118,11 @@ function App() {
             expand="lg"
             light
             fluid
-            className={`container-fluid navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''} ${hovered ? "menu-open" : ""}`}
+            className={`navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''}`}
             fixed="top"
             onMouseLeave={() => setHovered(false)}
             onMouseEnter={() => setHovered(true)}
+            style={{ backgroundColor: openBasic ? "white" : "" }}
           >
             <MDBContainer fluid>
               <MDBNavbarBrand className='mx-5' href="#">
@@ -146,7 +135,11 @@ function App() {
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
-                onClick={() => setOpenBasic(!openBasic)}
+                onClick={() => {
+                  console.log("До:", openBasic);
+                  setOpenBasic(!openBasic);
+                  console.log("После:", openBasic);
+                }}
               >
                 <MDBIcon icon="bars" fas />
               </MDBNavbarToggler>
@@ -237,6 +230,9 @@ function App() {
 
             </MDBContainer>
           </MDBNavbar>
+
+
+
           <Routes>
             <Route path='/' element={<Home searchQuery={searchQuery} />} ></Route>
           </Routes>

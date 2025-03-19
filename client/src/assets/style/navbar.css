@@ -1,18 +1,17 @@
-/* Navbar default styles */
+/* Адаптивный Topbar */
 .topbar {
   background-color: #f8f9fa;
-  /* Светлый фон */
-  /* height: 60px; */
   display: flex;
+  flex-wrap: wrap; /* Позволяет элементам переноситься */
   align-items: center;
   justify-content: space-between;
-  padding: 0 50px;
+  padding: 10px 20px;
   font-size: 14px;
   position: fixed;
   width: 100%;
   z-index: 999;
+  top: 0;
 }
-
 /* Social icons */
 .topbar .social-icons a {
  
@@ -25,36 +24,76 @@
   /* Синий при наведении */
 }
 
+/* Контейнер для элементов в одну линию */
+.topbar .topbar-content {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  align-items: center;
+}
+
+/* Уменьшаем отступы на мобильных */
+@media (max-width: 768px) {
+  .topbar {
+    flex-direction: column;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .topbar .topbar-content {
+    flex-direction: column;
+    gap: 5px;
+  }
+
+  .topbar a {
+    font-size: 12px;
+  }
+
+  .topbar .social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+  }
+
+  .topbar .social-icons a {
+    padding: 5px;
+  }
+
+  
+}
+
  
 
 /* Adjust margin for the navbar to avoid overlap */
  
-
+.navbar2.menu-open {
+  background-color: white !important;
+}
 
 .navbar2 {
   background-color: transparent;
   /* Прозрачный фон по умолчанию */
   transition: background-color 0.3s ease;
   box-shadow: none;
-  height: 80px;
-  margin-top: 45px;
+  /* height: 80px; */
+  margin-top: 55px;
   /* border-radius: 1.25rem; */
 }
 
 /* Navbar when scrolled */
-.navbar.scrolled {
+.navbar2.scrolled {
   background-color: #fff;
   margin-top: 0;
   /* Белый фон при скролле */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar:hover {
+.navbar2:hover {
   background-color: #fff;
 
 }
 
-.navbar:hover .nav-link {
+.navbar2:hover .nav-link {
   color: black !important;
 }
 
@@ -64,53 +103,53 @@
   transition: color 0.3s ease;
 }
 
-.navbar.scrolled .navbar-toggler {
+.navbar2.scrolled .navbar-toggler {
   color: black !important;
   /* Черный цвет текста на белом фоне */
 }
 
 /* Toggler hover effect */
-.navbar.scrolled .navbar-toggler:hover {
+.navbar2.scrolled .navbar-toggler:hover {
   color: #555 !important;
   /* Темно-серый при наведении */
 }
 
 /* Navbar links default state (white for transparent background) */
-.navbar .nav-link {
+.navbar2 .nav-link {
   color: white !important;
   /* Белый цвет текста на прозрачном фоне */
   transition: color 0.3s ease;
 }
 
-.navbar .nav-link:hover {
+.navbar2 .nav-link:hover {
   color: #dcdcdc !important;
   /* Slightly lighter color on hover */
 }
 
 /* Navbar links when scrolled (black for white background) */
-.navbar.scrolled .nav-link {
+.navbar2.scrolled .nav-link {
   color: black !important;
   /* Черный цвет текста на белом фоне */
 }
 
-.navbar.scrolled .nav-link:hover {
+.navbar2.scrolled .nav-link:hover {
   color: #555 !important;
   /* Darker gray on hover */
 }
 
 
 /* Custom select dropdown when scrolled (black text for white background) */
-.navbar.scrolled {
+.navbar2.scrolled {
   color: black;
 }
 
 /* Logo alignment adjustment */
-.navbar .navbar-brand img {
+.navbar2 .navbar-brand img {
   height: 75px;
   transition: transform 0.3s ease;
 }
 
-.navbar.scrolled .navbar-brand img {
+.navbar2.scrolled .navbar-brand img {
   transform: scale(0.9);
   /* Slightly smaller logo when scrolled */
 }
@@ -118,7 +157,7 @@
 
 
 /* General transition for smoother appearance */
-.navbar,
+.navbar2,
 .navbar .nav-link {
   transition: all 0.3s ease;
 }
