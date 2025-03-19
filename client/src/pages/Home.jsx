@@ -58,10 +58,10 @@ function Home({ searchQuery }) {
         <>
             <Header />
 
-            <div style={{ backgroundColor: ' rgb(240, 234, 234)' }}>
+            <div className="bg-white">
 
 
-                <MDBContainer className="text-black" style={{ marginTop: '-40px', position: 'relative' }}>
+                {/* <MDBContainer className="text-black" style={{ marginTop: '-40px', position: 'relative' }}>
                     <MDBRow className="justify-content-evenly" style={{ height: '100%' }}>
                         <MDBCol lg={3} className="s-prod-list__item  d-flex flex-column" style={{ minHeight: '300px' }}>
                             <div className="d-flex flex-column p-4" style={{ flexGrow: 1 }}>
@@ -93,7 +93,7 @@ function Home({ searchQuery }) {
                             </div>
                         </MDBCol>
                     </MDBRow>
-                </MDBContainer>
+                </MDBContainer> */}
 
 
                 <MDBContainer fluid className="pt-4 mb-5">
@@ -191,7 +191,7 @@ function Home({ searchQuery }) {
                 </MDBContainer> */}
 
 
-                <MDBContainer fluid className="bg-black bg-image mt-3" style={{ backgroundImage: `url(${bg})` }}>
+                {/* <MDBContainer fluid className="bg-black bg-image mt-3" style={{ backgroundImage: `url(${bg})` }}>
                     <div>
 
                         <MDBContainer className="mt-3 pt-5">
@@ -277,16 +277,16 @@ function Home({ searchQuery }) {
                         </MDBContainer>
                     </div>
 
-                </MDBContainer>
+                </MDBContainer> */}
 
                 {/* <Work /> */}
 
 
-                <MDBContainer className="mt-5">
+                {/* <MDBContainer className="mt-5">
                     <MDBRow>
                         <h1 className="text-black">Наши партнеры</h1>
                     </MDBRow>
-                </MDBContainer>
+                </MDBContainer> */}
 
             </div>
 
