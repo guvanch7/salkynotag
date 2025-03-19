@@ -12,9 +12,11 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
   const [loading, setLoading] = useState(true);
   const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [] });
   const loadMoreRef = useRef(null);
+  const API_URL = import.meta.env.VITE_API_URL;
+
 
   useEffect(() => {
-    axios.get("http://localhost:5000/api/air-conditioners")
+    axios.get(`${API_URL}/api/air-conditioners`)
       .then((response) => {
         setAirConditioners(response.data);
         setLoading(false);
