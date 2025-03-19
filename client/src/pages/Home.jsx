@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useState, forwardRef  } from "react";
 import "mdb-react-ui-kit/dist/css/mdb.min.css";
 import {
     MDBRow,
@@ -33,7 +33,7 @@ import "../App.css";
 
 
 
-function Home({ searchQuery }) {
+function Home({ searchQuery, targetRef  }) {
     const { t } = useTranslation();
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [] });
@@ -96,18 +96,18 @@ function Home({ searchQuery }) {
                 </MDBContainer> */}
 
 
-                <MDBContainer fluid className="pt-4 mb-5">
-                        <div>
+                <MDBContainer fluid className="pt-4 mb-5" id="products-section">
+                        {/* <div>
                             <span class="badge bg-white text-black rounded-pill">Продукты</span>
                         </div>
-                        <h1 className="text-black">Оборудования</h1>
+                        <h1 className="text-black">Оборудования</h1> */}
 
 
 
 
                         {/* Передаем isFilterOpen в AirConditionersList */}
                         {/* Кнопка управления фильтром */}
-                        <div className="text-lg-end ">
+                        {/* <div className="text-lg-end ">
 
                             <button onClick={toggleFilter} className="my-3 filterBtn   bg-none border-0">
 
@@ -123,12 +123,12 @@ function Home({ searchQuery }) {
 	c-1.4,0-2.7,0-4.1,0c-0.1,0-0.3,0-0.4,0C0.4,1.4,0,1.7,0,2C0,2.4,0.4,2.6,0.8,2.6z"></path></svg></div>
 
                             </button>
-                        </div>
+                        </div> */}
                     <MDBRow>
 
 
                         {/* Передаем состояние фильтра */}
-                        <AirConditionersList isFilterOpen={isFilterOpen}  searchQuery={searchQuery} />
+                        <AirConditionersList isFilterOpen={!isFilterOpen}  searchQuery={searchQuery} ref={targetRef} />
                     </MDBRow>
                 </MDBContainer>
 

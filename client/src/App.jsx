@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react'
+import { useState, useEffect, useRef } from 'react'
 import 'mdb-react-ui-kit/dist/css/mdb.min.css';
 import "@fortawesome/fontawesome-free/css/all.min.css";
 import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
@@ -36,8 +36,7 @@ import en from './assets/icon/en.png'
 import tiktok from './assets/icon/tik-tok.png'
 import instagram from './assets/icon/instagram.png'
 import facebook from './assets/icon/facebook.png'
-import youtube from './assets/icon/youtube.png'
-import linkedin from './assets/icon/linkedin.png'
+import whatsapp from './assets/icon/whatsapp.png'
 
 
 
@@ -45,6 +44,7 @@ function App() {
   const [scrolled, setScrolled] = useState(false);
   const [openBasic, setOpenBasic] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
+  const targetRef = useRef(null);
 
   const { t, i18n } = useTranslation();
 
@@ -70,7 +70,13 @@ function App() {
   }, []);
 
   const [hovered, setHovered] = useState(false);
-  console.log(openBasic);
+
+  const scrollToProducts = () => {
+    const section = document.getElementById("products-section");
+    if (section) {
+      section.scrollIntoView({ behavior: "smooth" });
+    }
+  };
 
 
   return (
@@ -80,34 +86,34 @@ function App() {
 
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
-              <div className="d-flex flex-wrap align-items-center gap-3">
-                <a className="text-white" href="mailto:info@heatcoldtm.com">
+              <div className="d-flex  flex-wrap align-items-center gap-3">
+                <a className="text-white me-4" href="mailto:info@heatcoldtm.com">
                   <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
                 </a>
-                <a className="text-white" href="#">
+                <a className="text-white me-4" href="#">
                   <MDBIcon className='pe-1' fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
                 </a>
-                <a className="text-white" href="tel:+99312754140">
+                <a className="text-white me-4" href="tel:+99312754140">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40
                 </a>
               </div>
 
               {/* Соц. сети */}
-              <div className="social-icons d-flex gap-2">
-                <a href="#" className="bg-white p-2 rounded-pill">
-                  <img src={tiktok} style={{ width: '1rem' }} alt="TikTok" />
+              <div className="social-icons d-flex align-items-center gap-3">
+                <a href="#" className="p-2 ">
+                  <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-pill">
-                  <img src={instagram} style={{ width: '1rem' }} alt="Instagram" />
+
+                <a href="#" className=" p-2">
+                  <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-pill">
-                  <img src={facebook} style={{ width: '1rem' }} alt="Facebook" />
+
+                <a href="#" className="p-2">
+                  <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                 </a>
-                <a href="#" className="bg-white p-2 rounded-pill">
-                  <img src={youtube} style={{ width: '1rem' }} alt="YouTube" />
-                </a>
-                <a href="#" className="bg-white p-2 rounded-pill">
-                  <img src={linkedin} style={{ width: '1rem' }} alt="LinkedIn" />
+                
+                <a href="#" className="p-2 ">
+                  <img src={whatsapp} style={{ width: '1.6rem' }} alt="LinkedIn" />
                 </a>
               </div>
             </MDBContainer>
@@ -118,20 +124,19 @@ function App() {
             expand="lg"
             light
             fluid
-            className={`navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''}`}
+            className={`bg-white text-black navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''}`}
             fixed="top"
-            onMouseLeave={() => setHovered(false)}
-            onMouseEnter={() => setHovered(true)}
-            style={{ backgroundColor: openBasic ? "white" : "" }}
+
+
           >
             <MDBContainer fluid>
               <MDBNavbarBrand className='mx-5' href="#">
-                <img src={hovered || scrolled ? logob : logow} style={{ height: '70px', transition: "0.3s ease-in-out" }}
+                <img src={logob} style={{ height: '70px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
 
               <MDBNavbarToggler
-                className="text-white"
+
                 aria-controls="navbarSupportedContent"
                 aria-expanded="false"
                 aria-label="Toggle navigation"
@@ -145,7 +150,7 @@ function App() {
               </MDBNavbarToggler>
 
               <MDBCollapse navbar className="justify-content-end" open={openBasic}>
-                <MDBNavbarNav className="mb-2 mb-lg-0 align-items-center justify-content-center">
+                <MDBNavbarNav className="mb-2 mb-lg-0 w-100 align-items-center justify-content-center">
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink className="nav-link">
                       <Link to="/" className="nav-link">
@@ -205,21 +210,23 @@ function App() {
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>
+                  <MDBNavbarItem className="me-4">
 
-                  <form className='d-flex input-group w-auto' onSubmit={(e) => e.preventDefault()}>
-                    <input
-                      type='search'
-                      className='form-control'
-                      placeholder='Search for products'
-                      aria-label='Search'
-                      value={searchQuery}
-                      onChange={(e) => setSearchQuery(e.target.value)}
-                    />
-                    <MDBBtn color='secondary'>
-                      <MDBIcon fas icon="search" />
-                    </MDBBtn>
-                  </form>
+                    <form className='d-flex input-group   me-4' onSubmit={(e) => e.preventDefault()}>
+                      <input
+                        type='search'
+                        className='form-control'
+                        placeholder='Search for products'
+                        aria-label='Search'
+                        value={searchQuery}
+                        onChange={(e) => setSearchQuery(e.target.value)}
+                      />
+                      <MDBBtn color="secondary" onClick={scrollToProducts}>
+                        <MDBIcon fas icon="search" />
+                      </MDBBtn>
+                    </form>
 
+                  </MDBNavbarItem>
 
 
 
@@ -234,7 +241,7 @@ function App() {
 
 
           <Routes>
-            <Route path='/' element={<Home searchQuery={searchQuery} />} ></Route>
+            <Route path='/' element={<Home searchQuery={searchQuery} targetRef={targetRef} />} ></Route>
           </Routes>
           {/* <Home /> */}
 

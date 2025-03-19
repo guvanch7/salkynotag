@@ -1,4 +1,6 @@
-@import url(https://db.onlinewebfonts.com/c/3a86b8ec8855002aad8b288eaba8915d?family=Myriad+Variable+Concept);
+@import url('https://fonts.googleapis.com/css2?family=Roboto+Condensed:ital,wght@0,100..900;1,100..900&display=swap');
+
+
 h1,
 div,
 ol,
@@ -15,9 +17,7 @@ p,
 span,
 select,
 option {
- 
-  font-family: "Myriad Variable Concept";
-  font-weight: bolder;
+  font-family: "Roboto Condensed", sans-serif;
  
  
 }

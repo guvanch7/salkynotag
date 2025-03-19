@@ -52,14 +52,14 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
 
       {isFilterOpen && (
         <motion.div
-          className="filter-panel border p-3 rounded"
+          className="filter-panel border p- rounded"
           initial={{ opacity: 0, x: -50 }} // Начальное состояние (невидимо и смещено влево)
           animate={{ opacity: 1, x: 0 }} // Анимация появления
           exit={{ opacity: 0, x: -50 }} // Анимация исчезновения
           transition={{ duration: 0.3, ease: "easeOut" }} // Плавность анимации
         >
           {/* Фильтр по типу кондиционеров */}
-          <div className="filter-section mb-3">
+          <div className="filter-section ">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle='Тип кондиционеров:'>
                 <div>
@@ -85,7 +85,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           </div>
 
           {/* Фильтр по марке (Бренды) */}
-          <div className="filter-section mb-3">
+          <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle='Марка Кондиционера:'>
                 <div>
@@ -119,7 +119,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           </div>
 
           {/* Фильтр по мощности */}
-          <div className="filter-section mb-3">
+          <div className="filter-section ">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle='Мощность:'>
                 <div>
@@ -161,7 +161,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           </div>
 
           {/* Фильтр по цвету (цветные блоки вместо чекбоксов) */}
-          <div className="filter-section mb-3">
+          <div className="filter-section ">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle='Цвет:'>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>

@@ -71,7 +71,7 @@
 }
 
 .navbar2 {
-  background-color: transparent;
+ 
   /* Прозрачный фон по умолчанию */
   transition: background-color 0.3s ease;
   box-shadow: none;
@@ -88,17 +88,12 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
 }
 
-.navbar2:hover {
-  background-color: #fff;
+ 
 
-}
-
-.navbar2:hover .nav-link {
-  color: black !important;
-}
+ 
 
 .navbar-toggler {
-  color: white !important;
+  color: black !important;
   /* Белый цвет текста на прозрачном фоне */
   transition: color 0.3s ease;
 }
@@ -108,21 +103,17 @@
   /* Черный цвет текста на белом фоне */
 }
 
-/* Toggler hover effect */
-.navbar2.scrolled .navbar-toggler:hover {
-  color: #555 !important;
-  /* Темно-серый при наведении */
-}
-
+ 
 /* Navbar links default state (white for transparent background) */
 .navbar2 .nav-link {
-  color: white !important;
+  /* color: white !important; */
+  color: black;
   /* Белый цвет текста на прозрачном фоне */
   transition: color 0.3s ease;
 }
 
 .navbar2 .nav-link:hover {
-  color: #dcdcdc !important;
+  /* color: #dcdcdc !important; */
   /* Slightly lighter color on hover */
 }
 
@@ -131,11 +122,7 @@
   color: black !important;
   /* Черный цвет текста на белом фоне */
 }
-
-.navbar2.scrolled .nav-link:hover {
-  color: #555 !important;
-  /* Darker gray on hover */
-}
+ 
 
 
 /* Custom select dropdown when scrolled (black text for white background) */
@@ -199,7 +186,7 @@
 }
 
 .navbar.menu-open .nav-link:hover {
-  color: gray !important;
+  /* color: gray !important; */
   /* Цвет при наведении */
 }
 
