@@ -104,20 +104,20 @@ function App() {
 
               {/* Соц. сети */}
               <div className="social-icons d-flex align-items-center gap-3">
-                <a href="#" className="p-2 ">
+                <a href="https://www.instagram.com/salkyn_otag/" className="p-2 ">
                   <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
                 </a>
 
-                <a href="#" className=" p-2">
+                <a href="https://www.tiktok.com/@salkyn_otag" className=" p-2">
                   <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
                 </a>
 
-                <a href="#" className="p-2">
+                <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-2">
                   <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                 </a>
                 
                 <a href="#" className="p-2 ">
-                  <img src={whatsapp} style={{ width: '1.6rem' }} alt="LinkedIn" />
+                  <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
                 </a>
               </div>
             </MDBContainer>
@@ -208,9 +208,9 @@ function App() {
                         <MDBIcon fas icon="globe" />
                       </MDBDropdownToggle>
                       <MDBDropdownMenu>
-                        <MDBDropdownItem link><Link className='text-black' onClick={() => changeLanguage('tm')}>Türkmençe</Link></MDBDropdownItem>
-                        <MDBDropdownItem link><Link className='text-black' onClick={() => changeLanguage('ru')}>Русский</Link></MDBDropdownItem>
-                        <MDBDropdownItem link><Link className='text-black' onClick={() => changeLanguage('en')}>English</Link></MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('tm')} link><Link className='text-black' >Türkmençe</Link></MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('ru')} link><Link className='text-black' >Русский</Link></MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('en')} link><Link className='text-black' >English</Link></MDBDropdownItem>
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>

@@ -17,9 +17,9 @@ import slider3 from "../assets/slider/slider3.jpg";
 import "../App.css";
 
 const slides = [
-    { image: slider1, text: "Широкий выбор моделей от лучших мировых производителей!" },
-    { image: slider2, text: "Сервисное и гарантийное обслуживание" },
-    { image: slider3, text: "Промышленные холодильные машины с воздушным и водяным охлаждением" },
+    { image: slider1, text: "headerTxt1" },
+    { image: slider2, text: "headerTxt2" },
+    { image: slider3, text: "headerTxt3" },
 ];
 
 function Header() {
