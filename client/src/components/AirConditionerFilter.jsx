@@ -23,11 +23,20 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
 
   const handleCheckboxChange = (category, value) => {
     setFilters(prevFilters => {
-      const currentValues = prevFilters[category];
-      let updatedValues = currentValues.includes(value)
-        ? currentValues.filter(item => item !== value)
-        : [...currentValues, value];
-      return { ...prevFilters, [category]: updatedValues };
+      if (category === 'color') {
+        // Если цвет уже выбран, сбросим выбор, иначе выбираем только этот цвет
+        return { 
+          ...prevFilters, 
+          color: prevFilters.color.includes(value) ? [] : [value]
+        };
+      } else {
+        // Для остальных категорий оставляем прежнюю логику
+        const currentValues = prevFilters[category];
+        const updatedValues = currentValues.includes(value)
+          ? currentValues.filter(item => item !== value)
+          : [...currentValues, value];
+        return { ...prevFilters, [category]: updatedValues };
+      }
     });
   };
 

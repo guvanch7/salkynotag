@@ -73,9 +73,9 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
   
   return (
     <MDBContainer fluid className="mt-4">
-      <MDBRow>
+      <MDBRow className='justify-content-center'>
         {/* Блок фильтра (левая колонка) */}
-        <MDBCol md="3" lg="3">
+        <MDBCol md="4" lg="3" xl={2}>
           <AirConditionerFilter onFilterChange={handleFilterChange} isFilterOpen={isFilterOpen} />
         </MDBCol>
 

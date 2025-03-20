@@ -124,7 +124,7 @@ function Home({ searchQuery, targetRef  }) {
 
                             </button>
                         </div> */}
-                    <MDBRow>
+                    <MDBRow className="justify-content-center">
 
 
                         {/* Передаем состояние фильтра */}
