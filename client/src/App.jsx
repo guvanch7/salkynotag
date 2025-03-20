@@ -5,6 +5,7 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import './assets/style/navbar.css';
 import Home from './pages/Home';
+import Prel from './components/Preloader';
 
 import {
   MDBNavbar,
@@ -82,7 +83,10 @@ function App() {
   return (
     <>
       <Router>
+      <Prel />
         <div>
+
+          
 
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
