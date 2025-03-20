@@ -15,7 +15,7 @@ const AirConditionerCard = ({ name, brand, power, coolingCapacity, oldPrice, pri
 
   return (
     <>
-      <MDBCard className='card2' style={{ width: '25rem' }}>
+      <MDBCard className='card2'  >
         {loading && <Skeleton height={200} />}
         <img
           src={image}
