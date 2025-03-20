@@ -15,11 +15,11 @@ const AirConditionerCard = ({ name, brand, power, coolingCapacity, oldPrice, pri
 
   return (
     <>
-      <MDBCard className='card2'  >
+      <MDBCard className='card2 imageCard'  >
         {loading && <Skeleton height={200} />}
         <img
           src={image}
-          className={`card-img-top card__img ${loading ? 'd-none' : ''}`}
+          className={`card-img-top  card__img ${loading ? 'd-none' : ''}`}
           alt={name}
           onClick={() => setOpen(true)}
           onLoad={handleImageLoad}
