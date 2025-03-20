@@ -86,7 +86,7 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
               <span className='visually-hidden'>Загрузка...</span>
             </MDBSpinner>
           ) : (
-            <MDBRow className="row-cols-1 row-cols-sm-2 row-cols-md-6 row-cols-lg-6 g-0">
+            <MDBRow className="row-cols-1 row-cols-sm-2 row-cols-md-6 row-cols-lg-3 g-0">
               {filteredAirConditioners.slice(0, visibleAirConditioners).map(ac => (
                 <MDBCol key={ac.id} className="p-1" data-aos="fade-up">
                   <AirConditionerCard
