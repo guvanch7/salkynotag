@@ -88,25 +88,16 @@
   margin-top: 0;
   /* Белый фон при скролле */
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+} 
+
+ 
+.social img {
+  transition: transform 0.2s ease-in-out;
 }
 
-.navbar-nav li>a:hover {
-  color: #333;
+.social:hover img {
+  transform: scale(1.2);
 }
-
-.navbar-nav li>a:after {
-  content: '';
-  display: block;
-  width: 0;
-  height: 2px;
-  background: #000;
-  transition: width .3s;
-}
-
-.navbar-nav li>a:hover::after {
-  width: 100%;
-}
-
 
 
 .navbar-toggler {
@@ -128,6 +119,7 @@
   /* Белый цвет текста на прозрачном фоне */
   transition: color 0.3s ease;
 }
+
  
 
 /* Navbar links when scrolled (black for white background) */
@@ -198,7 +190,14 @@
   color: black !important;
 }
 
- 
+.navbar2 .nav-link {
+  transition: transform 0.3s ease-in-out;
+}
+
+.navbar2 .nav-link:hover {
+  transform: scale(1.07);
+}
+
 
 .navbar.menu-open .fa-bars {
   color: black !important;

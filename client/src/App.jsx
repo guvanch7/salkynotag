@@ -90,33 +90,39 @@ function App() {
 
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
-              <div className="d-flex  flex-wrap align-items-center gap-3">
-                <a className="text-white me-4" href="mailto:info@heatcoldtm.com">
-                  <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
-                </a>
-                <a className="text-white me-4" href="#">
+              <div className="d-flex social-icons flex-wrap align-items-center gap-3">
+                <a className="text-white social me-4" href="#">
                   <MDBIcon className='pe-1' fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
                 </a>
-                <a className="text-white me-4" href="tel:+99312754140">
+
+                <a className="text-white social me-4" href="mailto:info@heatcoldtm.com">
+                  <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
+                </a>
+
+                <a className="text-white social me-4" href="tel:+99312754140">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40
+                </a>
+
+                <a className="text-white social me-4" href="tel:+99365508060">
+                  <MDBIcon className='pe-1' fas icon="phone" /> +993 65 50 80 60
                 </a>
               </div>
 
               {/* Соц. сети */}
               <div className="social-icons d-flex align-items-center gap-3">
-                <a href="https://www.instagram.com/salkyn_otag/" className="p-2 ">
+                <a href="https://www.instagram.com/salkyn_otag/" className="p-2 social">
                   <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
                 </a>
 
-                <a href="https://www.tiktok.com/@salkyn_otag" className=" p-2">
+                <a href="https://www.tiktok.com/@salkyn_otag" className=" p-2 social">
                   <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
                 </a>
 
-                <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-2">
+                <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-2 social">
                   <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                 </a>
                 
-                <a href="#" className="p-2 ">
+                <a href="#" className="p-2 social">
                   <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
                 </a>
               </div>
@@ -129,13 +135,13 @@ function App() {
             light
             fluid
             className={`bg-white text-black navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''}`}
-            fixed="top"
+            sticky="top"
 
 
           >
             <MDBContainer fluid>
               <MDBNavbarBrand className='mx-5' href="#">
-                <img src={logob} style={{ height: '70px', transition: "0.3s ease-in-out" }}
+                <img src={logob} style={{ height: '95px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
 
@@ -154,7 +160,7 @@ function App() {
               </MDBNavbarToggler>
 
               <MDBCollapse navbar className="justify-content-end" open={openBasic}>
-                <MDBNavbarNav className="mb-2 mb-lg-0 w-100 align-items-center justify-content-center">
+                <MDBNavbarNav className="mb-2 mb-lg-0 w-100 align-items-center justify-content-center fs-5">
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink className="nav-link">
                       <Link to="/" className="nav-link">

@@ -88,7 +88,7 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
           ) : (
             <MDBRow className='justify-content-center'>
               {filteredAirConditioners.slice(0, visibleAirConditioners).map(ac => (
-                <MDBCol xl={4} lg={6} md={6} sm={12} key={ac.id} className="p-1" data-aos="fade-up">
+                <MDBCol xl={3} lg={6} md={6} sm={12} key={ac.id} className="" data-aos="fade-up">
                   <AirConditionerCard
                     name={ac.name}
                     brand={ac.brand}

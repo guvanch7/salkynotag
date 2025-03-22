@@ -61,7 +61,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
 
       {isFilterOpen && (
         <motion.div
-          className="filter-panel border p- rounded"
+          className="filter-panel   rounded"
           initial={{ opacity: 0, x: -50 }} // Начальное состояние (невидимо и смещено влево)
           animate={{ opacity: 1, x: 0 }} // Анимация появления
           exit={{ opacity: 0, x: -50 }} // Анимация исчезновения

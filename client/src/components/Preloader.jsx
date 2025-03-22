@@ -60,9 +60,7 @@ const Prel = () => {
             {loading && <Preloader onComplete={() => setLoading(false)} />}
             {!loading && (
                 <MDBContainer className="mt-5">
-                    {/* Основное содержимое сайта */}
-                    <h1>Добро пожаловать на сайт!</h1>
-                    <p>Основной контент...</p>
+                   
                 </MDBContainer>
             )}
         </>
