@@ -1,36 +1,25 @@
 import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { MDBAccordion, MDBAccordionItem } from "mdb-react-ui-kit";
+// import './AirConditionerFilter.css'; // Подключение кастомных стилей (если требуется)
 
 const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
   const [filters, setFilters] = useState({
     type: [],
     brand: [],
     power: [],
-    color: []
+    color: [],
+    homeType: '' // Для выбора типа через select
   });
-
-  const [sectionsOpen, setSectionsOpen] = useState({
-    type: true,
-    brand: true,
-    power: true,
-    color: true
-  });
-
-  const toggleSection = (section) => {
-    setSectionsOpen(prev => ({ ...prev, [section]: !prev[section] }));
-  };
 
   const handleCheckboxChange = (category, value) => {
     setFilters(prevFilters => {
       if (category === 'color') {
-        // Если цвет уже выбран, сбросим выбор, иначе выбираем только этот цвет
         return { 
           ...prevFilters, 
           color: prevFilters.color.includes(value) ? [] : [value]
         };
       } else {
-        // Для остальных категорий оставляем прежнюю логику
         const currentValues = prevFilters[category];
         const updatedValues = currentValues.includes(value)
           ? currentValues.filter(item => item !== value)
@@ -40,12 +29,18 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     });
   };
 
-  // Вызываем onFilterChange после обновления состояния фильтров
+  // Если тип "Для Дома" не выбран, сбрасываем homeType
+  useEffect(() => {
+    if (!filters.type.includes('home') && filters.homeType !== '') {
+      setFilters(prevFilters => ({ ...prevFilters, homeType: '' }));
+    }
+  }, [filters.type]);
+
   useEffect(() => {
     onFilterChange(filters);
   }, [filters]);
 
-  // Массив цветов с их кодами (можно настроить по необходимости)
+  // Массив цветов с их кодами
   const colorOptions = [
     { name: 'white', label: 'Белый', code: '#ffffff' },
     { name: 'black', label: 'Черный', code: '#000000' },
@@ -56,21 +51,21 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
   return (
     <>
       <div className="text-end air-conditioner-filter">
-        {/* Внутренняя кнопка управления скрыта, так как управление фильтром происходит извне */}
+        {/* Внутренняя кнопка управления скрыта */}
       </div>
 
       {isFilterOpen && (
         <motion.div
-          className="filter-panel   rounded"
-          initial={{ opacity: 0, x: -50 }} // Начальное состояние (невидимо и смещено влево)
-          animate={{ opacity: 1, x: 0 }} // Анимация появления
-          exit={{ opacity: 0, x: -50 }} // Анимация исчезновения
-          transition={{ duration: 0.3, ease: "easeOut" }} // Плавность анимации
+          className="filter-panel"
+          initial={{ opacity: 0, x: -50 }}
+          animate={{ opacity: 1, x: 0 }}
+          exit={{ opacity: 0, x: -50 }}
+          transition={{ duration: 0.3, ease: "easeOut" }}
         >
           {/* Фильтр по типу кондиционеров */}
-          <div className="filter-section ">
+          <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle='Тип кондиционеров:'>
+              <MDBAccordionItem collapseId={1} headerTitle="Тип кондиционеров:">
                 <div>
                   <label className="me-3">
                     <input
@@ -88,15 +83,36 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                     />{' '}
                     Промышленные
                   </label>
+                  {/* Выпадающий список для типа "Для Дома" с анимацией */}
+                  {filters.type.includes('home') && (
+                    <motion.div 
+                      className="select-home-type"
+                      initial={{ opacity: 0, y: -10 }}
+                      animate={{ opacity: 1, y: 0 }}
+                      transition={{ duration: 0.3 }}
+                    >
+                      <select
+                        className="custom-select"
+                        value={filters.homeType}
+                        onChange={(e) =>
+                          setFilters(prevFilters => ({ ...prevFilters, homeType: e.target.value }))
+                        }
+                      >
+                        <option value="">Выберите тип</option>
+                        <option value="inverter">Инверторные</option>
+                        <option value="nonInverter">Неинверторные</option>
+                      </select>
+                    </motion.div>
+                  )}
                 </div>
               </MDBAccordionItem>
             </MDBAccordion>
           </div>
 
-          {/* Фильтр по марке (Бренды) */}
+          {/* Фильтр по марке */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle='Марка Кондиционера:'>
+              <MDBAccordionItem collapseId={1} headerTitle="Марка Кондиционера:">
                 <div>
                   <label className="me-3">
                     <input
@@ -128,9 +144,9 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           </div>
 
           {/* Фильтр по мощности */}
-          <div className="filter-section ">
+          <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle='Мощность:'>
+              <MDBAccordionItem collapseId={1} headerTitle="Мощность:">
                 <div>
                   <label className="me-3">
                     <input
@@ -169,10 +185,10 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
             </MDBAccordion>
           </div>
 
-          {/* Фильтр по цвету (цветные блоки вместо чекбоксов) */}
-          <div className="filter-section ">
+          {/* Фильтр по цвету */}
+          <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle='Цвет:'>
+              <MDBAccordionItem collapseId={1} headerTitle="Цвет:">
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {colorOptions.map((color) => (
                     <div

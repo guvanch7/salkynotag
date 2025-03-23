@@ -10,10 +10,10 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
   const [airConditioners, setAirConditioners] = useState([]);
   const [visibleAirConditioners, setVisibleAirConditioners] = useState(9); // 3x3
   const [loading, setLoading] = useState(true);
-  const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [] });
+  // Расширяем состояние фильтров: добавлено homeType
+  const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [], homeType: '' });
   const loadMoreRef = useRef(null);
   const API_URL = import.meta.env.VITE_API_URL;
-
 
   useEffect(() => {
     axios.get(`${API_URL}/api/air-conditioners`)
@@ -61,16 +61,27 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
   };
 
   const filteredAirConditioners = airConditioners.filter(ac => {
-    return (
-      (filters.type.length === 0 || filters.type.includes(ac.category)) &&
-      (filters.brand.length === 0 || filters.brand.includes(ac.brand)) &&
-      (filters.power.length === 0 || filters.power.includes(ac.power)) &&
-      (filters.color.length === 0 || filters.color.includes(ac.color)) &&
-      ac.name.toLowerCase().includes(searchQuery.toLowerCase())
-    );
+    // Проверяем стандартные фильтры
+    const matchesType = filters.type.length === 0 || filters.type.includes(ac.category);
+    const matchesBrand = filters.brand.length === 0 || filters.brand.includes(ac.brand);
+    const matchesPower = filters.power.length === 0 || filters.power.includes(ac.power);
+    const matchesColor = filters.color.length === 0 || filters.color.includes(ac.color);
+    const matchesSearch = ac.name.toLowerCase().includes(searchQuery.toLowerCase());
+
+    // Новая проверка для фильтрации по inverter,
+    // если выбран тип "Для Дома" и в селекте указана конкретная опция
+    let matchesInverter = true;
+    if (filters.type.includes('home') && filters.homeType !== '') {
+      if (filters.homeType === 'inverter') {
+        matchesInverter = ac.inverter === true;
+      } else if (filters.homeType === 'nonInverter') {
+        matchesInverter = ac.inverter === false;
+      }
+    }
+
+    return matchesType && matchesBrand && matchesPower && matchesColor && matchesSearch && matchesInverter;
   });
 
-  
   return (
     <MDBContainer fluid className="mt-4">
       <MDBRow className='justify-content-center'>
