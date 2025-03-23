@@ -352,10 +352,7 @@ input[type="checkbox"]:focus{
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
-.custom-select:focus {
-  border-color: #007bff;
-  box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-}
+ 
 
 .select-home-type {
   margin-top: 1rem;

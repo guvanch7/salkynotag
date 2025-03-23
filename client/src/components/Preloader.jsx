@@ -59,7 +59,7 @@ const Prel = () => {
         <>
             {loading && <Preloader onComplete={() => setLoading(false)} />}
             {!loading && (
-                <MDBContainer className="mt-5">
+                <MDBContainer className="">
                    
                 </MDBContainer>
             )}

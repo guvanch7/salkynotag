@@ -8,7 +8,7 @@
   justify-content: space-between;
   padding: 10px 11px 10px 11px;
   font-size: 14px;
-  position: fixed;
+  /* position: fixed; */
   width: 100%;
   z-index: 999;
   top: 0;
@@ -78,7 +78,7 @@
   transition: background-color 0.3s ease;
   box-shadow: none;
   /* height: 80px; */
-  margin-top: 55px;
+  /* margin-top: 55px; */
   /* border-radius: 1.25rem; */
 }
 

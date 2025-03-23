@@ -47,6 +47,10 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const targetRef = useRef(null);
 
+   
+  const [lastScrollTop, setLastScrollTop] = useState(0);
+  const threshold = 50; // порог активного скролла вверх для появления
+
   const { t, i18n } = useTranslation();
 
   const changeLanguage = (language) => {
@@ -55,20 +59,23 @@ function App() {
 
   useEffect(() => {
     const handleScroll = () => {
-      if (window.scrollY > 50) {
+      const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+      
+      // Если прокручиваем вниз и уже прокрутили немного (например, больше 50px), скрываем навбар
+      if (currentScroll > lastScrollTop && currentScroll > 50) {
         setScrolled(true);
-      } else {
+      }
+      // Если прокручиваем вверх более чем на threshold пикселей, показываем навбар
+      else if (lastScrollTop - currentScroll > threshold) {
         setScrolled(false);
       }
+      
+      setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
     };
 
     window.addEventListener('scroll', handleScroll);
-
-    // Cleanup the event listener
-    return () => {
-      window.removeEventListener('scroll', handleScroll);
-    };
-  }, []);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, [lastScrollTop]);
 
   const [hovered, setHovered] = useState(false);
 
@@ -136,7 +143,10 @@ function App() {
             fluid
             className={`bg-white text-black navbar2 ${scrolled ? 'scrolled' : ''} ${openBasic ? 'menu-open' : ''}`}
             sticky="top"
-
+            style={{
+              top: scrolled ? '-150px' : '0',
+              transition: 'top 0.3s ease-in-out'
+            }}
 
           >
             <MDBContainer fluid>
