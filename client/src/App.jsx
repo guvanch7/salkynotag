@@ -95,8 +95,8 @@ function App() {
                   <MDBIcon className='pe-1' fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
                 </a>
 
-                <a className="text-white social me-4" href="mailto:info@heatcoldtm.com">
-                  <MDBIcon className='pe-1' fas icon="envelope" /> info@heatcoldtm.com
+                <a className="text-white social me-4" href="mailto:info@salkynotag.com.tm">
+                  <MDBIcon className='pe-1' fas icon="envelope" /> info@salkynotag.com.tm
                 </a>
 
                 <a className="text-white social me-4" href="tel:+99312754140">
@@ -110,19 +110,19 @@ function App() {
 
               {/* Соц. сети */}
               <div className="social-icons d-flex align-items-center gap-3">
-                <a href="https://www.instagram.com/salkyn_otag/" className="p-2 social">
+                <a href="https://www.instagram.com/salkyn_otag/" className="p-1 social">
                   <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
                 </a>
 
-                <a href="https://www.tiktok.com/@salkyn_otag" className=" p-2 social">
+                <a href="https://www.tiktok.com/@salkyn_otag" className=" p-1 social">
                   <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
                 </a>
 
-                <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-2 social">
+                <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-1 social">
                   <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                 </a>
                 
-                <a href="#" className="p-2 social">
+                <a href="#" className="p-1 social">
                   <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
                 </a>
               </div>
@@ -140,8 +140,8 @@ function App() {
 
           >
             <MDBContainer fluid>
-              <MDBNavbarBrand className='mx-5' href="#">
-                <img src={logob} style={{ height: '95px', transition: "0.3s ease-in-out" }}
+              <MDBNavbarBrand className='-5' href="#">
+                <img src={logob} style={{ height: '85px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
 
@@ -220,9 +220,9 @@ function App() {
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>
-                  <MDBNavbarItem className="me-4">
+                  <MDBNavbarItem className="me-3">
 
-                    <form className='d-flex input-group   me-4' onSubmit={(e) => e.preventDefault()}>
+                    <form className='d-flex input-group   me-3' onSubmit={(e) => e.preventDefault()}>
                       <input
                         type='search'
                         className='form-control'

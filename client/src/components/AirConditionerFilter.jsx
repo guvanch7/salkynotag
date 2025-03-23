@@ -138,7 +138,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(9000)}
                       onChange={() => handleCheckboxChange('power', 9000)}
                     />{' '}
-                    9000 BTU
+                    9000 BTU (до 30м²)
                   </label>
                   <label className="me-3">
                     <input
@@ -146,7 +146,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(12000)}
                       onChange={() => handleCheckboxChange('power', 12000)}
                     />{' '}
-                    12000 BTU
+                    12000 BTU (до 40м²)
                   </label>
                   <label className="me-3">
                     <input
@@ -154,7 +154,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(18000)}
                       onChange={() => handleCheckboxChange('power', 18000)}
                     />{' '}
-                    18000 BTU
+                    18000 BTU (до 60м²)
                   </label>
                   <label>
                     <input
@@ -162,7 +162,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(24000)}
                       onChange={() => handleCheckboxChange('power', 24000)}
                     />{' '}
-                    24000 BTU
+                    24000 BTU (до 80м²)
                   </label>
                 </div>
               </MDBAccordionItem>

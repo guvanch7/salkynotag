@@ -6,7 +6,7 @@
   /* Позволяет элементам переноситься */
   align-items: center;
   justify-content: space-between;
-  padding: 10px 20px;
+  padding: 10px 11px 10px 11px;
   font-size: 14px;
   position: fixed;
   width: 100%;
