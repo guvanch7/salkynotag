@@ -271,5 +271,59 @@
     "oldPrice": 10000,
     "image": "/prods/20. King Home Pular white 24000 (65-70M²).jpg",
     "category": "home"
+  },
+  {
+    "id": 22,
+    "name": "Gree muse white 18000  INVERTER",
+    "brand": "Gree",
+    "size": 65,
+    "color": "white",
+    "inverter": true,
+    "power": 18000,
+    "price": 8800,
+    "oldPrice": 10000,
+    "image": "/prods/21. Gree muse white 18000  INVERTER.jpg",
+    "category": "home"
+  },
+  {
+    "id": 23,
+    "name": "Gree muse white 24000 INVERTER",
+    "brand": "Gree",
+    "size": 65,
+    "color": "white",
+    "inverter": true,
+    "power": 18000,
+    "price": 8800,
+    "oldPrice": 10000,
+    "image": "/prods/22. Gree muse white 24000  INVERTER.jpg",
+    "category": "home"
+  },
+
+  {
+    "id": 24,
+    "name": "Gree muse white 24000",
+    "brand": "Gree",
+    "size": 65,
+    "color": "white",
+    "inverter": false,
+    "power": 24000,
+    "price": 8800,
+    "oldPrice": 10000,
+    "image": "/prods/23. Gree muse white 24000.jpg",
+    "category": "home"
+  },
+
+  {
+    "id": 25,
+    "name": "Gree muse white INVERTER 12000",
+    "brand": "Gree",
+    "size": 65,
+    "color": "white",
+    "inverter": true,
+    "power": 12000,
+    "price": 8800,
+    "oldPrice": 10000,
+    "image": "/prods/24. Gree muse white INVERTER 12000.jpg",
+    "category": "home"
   }
 ]
