@@ -9,17 +9,19 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     brand: [],
     power: [],
     color: [],
-    homeType: '' // Для выбора типа через select
+    homeType: [] // Массив для чекбоксов "Инверторные" и "Неинверторные"
   });
 
   const handleCheckboxChange = (category, value) => {
     setFilters(prevFilters => {
       if (category === 'color') {
-        return { 
-          ...prevFilters, 
+        // Если цвет уже выбран, сбросим выбор, иначе выбираем только этот цвет
+        return {
+          ...prevFilters,
           color: prevFilters.color.includes(value) ? [] : [value]
         };
       } else {
+        // Для остальных категорий оставляем прежнюю логику
         const currentValues = prevFilters[category];
         const updatedValues = currentValues.includes(value)
           ? currentValues.filter(item => item !== value)
@@ -29,18 +31,19 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     });
   };
 
-  // Если тип "Для Дома" не выбран, сбрасываем homeType
+  // Если "Для Дома" не выбрано, сбрасываем чекбоксы для "Инверторные"/"Неинверторные"
   useEffect(() => {
-    if (!filters.type.includes('home') && filters.homeType !== '') {
-      setFilters(prevFilters => ({ ...prevFilters, homeType: '' }));
+    if (!filters.type.includes('home') && filters.homeType.length > 0) {
+      setFilters(prevFilters => ({ ...prevFilters, homeType: [] }));
     }
   }, [filters.type]);
 
+  // Фильтр отправляется после каждого изменения
   useEffect(() => {
     onFilterChange(filters);
   }, [filters]);
 
-  // Массив цветов с их кодами
+  // Массив цветов кондиционеров
   const colorOptions = [
     { name: 'white', label: 'Белый', code: '#ffffff' },
     { name: 'black', label: 'Черный', code: '#000000' },
@@ -66,8 +69,8 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle="Тип кондиционеров:">
-                <div>
-                  <label className="me-3">
+                <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
+                  <label>
                     <input
                       type="checkbox"
                       checked={filters.type.includes('home')}
@@ -75,6 +78,31 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                     />{' '}
                     Для Дома
                   </label>
+
+                  {/* Инверторные и неинверторные (под "Для Дома") */}
+                  {filters.type.includes('home') && (
+                    <div style={{ paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
+                      <label style={{ fontSize: "0.85rem" }}>
+                        <input
+                          type="checkbox"
+                          style={{ transform: "scale(0.8)", marginRight: "0.3rem" }}
+                          checked={filters.homeType.includes('inverter')}
+                          onChange={() => handleCheckboxChange('homeType', 'inverter')}
+                        />{' '}
+                        Инверторные
+                      </label>
+                      <label style={{ fontSize: "0.85rem" }}>
+                        <input
+                          type="checkbox"
+                          style={{ transform: "scale(0.8)", marginRight: "0.3rem" }}
+                          checked={filters.homeType.includes('nonInverter')}
+                          onChange={() => handleCheckboxChange('homeType', 'nonInverter')}
+                        />{' '}
+                        Неинверторные
+                      </label>
+                    </div>
+                  )}
+
                   <label>
                     <input
                       type="checkbox"
@@ -83,33 +111,12 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                     />{' '}
                     Промышленные
                   </label>
-                  {/* Выпадающий список для типа "Для Дома" с анимацией */}
-                  {filters.type.includes('home') && (
-                    <motion.div 
-                      className="select-home-type"
-                      initial={{ opacity: 0, y: -10 }}
-                      animate={{ opacity: 1, y: 0 }}
-                      transition={{ duration: 0.3 }}
-                    >
-                      <select
-                        className="custom-select"
-                        value={filters.homeType}
-                        onChange={(e) =>
-                          setFilters(prevFilters => ({ ...prevFilters, homeType: e.target.value }))
-                        }
-                      >
-                        <option value="">Выберите тип</option>
-                        <option value="inverter">Инверторные</option>
-                        <option value="nonInverter">Неинверторные</option>
-                      </select>
-                    </motion.div>
-                  )}
                 </div>
               </MDBAccordionItem>
             </MDBAccordion>
           </div>
 
-          {/* Фильтр по марке */}
+          {/* Фильтр по марке (Бренды) */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle="Марка Кондиционера:">
@@ -185,7 +192,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
             </MDBAccordion>
           </div>
 
-          {/* Фильтр по цвету */}
+          {/* Фильтр по цвету (цветные блоки вместо чекбоксов) */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
               <MDBAccordionItem collapseId={1} headerTitle="Цвет:">

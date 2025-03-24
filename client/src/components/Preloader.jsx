@@ -29,7 +29,7 @@ const Preloader = ({ onComplete }) => {
                 width: '100%',
                 height: '100%',
                 zIndex: 9999,
-                backgroundColor: '#000',
+                backgroundColor: 'white',
                 opacity: fadeOut ? 0 : 1,
                 transition: 'opacity 1s ease'
             }}

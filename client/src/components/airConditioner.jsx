@@ -10,8 +10,8 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
   const [airConditioners, setAirConditioners] = useState([]);
   const [visibleAirConditioners, setVisibleAirConditioners] = useState(9); // 3x3
   const [loading, setLoading] = useState(true);
-  // Расширяем состояние фильтров: добавлено homeType
-  const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [], homeType: '' });
+  // Расширяем состояние фильтров: homeType теперь хранится как массив
+  const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [], homeType: [] });
   const loadMoreRef = useRef(null);
   const API_URL = import.meta.env.VITE_API_URL;
 
@@ -68,13 +68,15 @@ const AirConditionersList = ({ isFilterOpen, searchQuery }) => {
     const matchesColor = filters.color.length === 0 || filters.color.includes(ac.color);
     const matchesSearch = ac.name.toLowerCase().includes(searchQuery.toLowerCase());
 
-    // Новая проверка для фильтрации по inverter,
-    // если выбран тип "Для Дома" и в селекте указана конкретная опция
+    // Новая проверка для фильтрации по inverter, когда выбран тип "Для Дома"
     let matchesInverter = true;
-    if (filters.type.includes('home') && filters.homeType !== '') {
-      if (filters.homeType === 'inverter') {
+    if (filters.type.includes('home') && filters.homeType.length > 0) {
+      // Если выбраны оба варианта, то выводим все
+      if (filters.homeType.includes('inverter') && filters.homeType.includes('nonInverter')) {
+        matchesInverter = true;
+      } else if (filters.homeType.includes('inverter')) {
         matchesInverter = ac.inverter === true;
-      } else if (filters.homeType === 'nonInverter') {
+      } else if (filters.homeType.includes('nonInverter')) {
         matchesInverter = ac.inverter === false;
       }
     }
