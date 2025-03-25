@@ -224,9 +224,9 @@ function App() {
                         <MDBIcon fas icon="globe" />
                       </MDBDropdownToggle>
                       <MDBDropdownMenu>
-                        <MDBDropdownItem  onClick={() => changeLanguage('tm')} link><Link className='text-black' >Türkmençe</Link></MDBDropdownItem>
-                        <MDBDropdownItem  onClick={() => changeLanguage('ru')} link><Link className='text-black' >Русский</Link></MDBDropdownItem>
-                        <MDBDropdownItem  onClick={() => changeLanguage('en')} link><Link className='text-black' >English</Link></MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('tm')} link> Türkmençe </MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('ru')} link> Русский   </MDBDropdownItem>
+                        <MDBDropdownItem  onClick={() => changeLanguage('en')} link> English   </MDBDropdownItem>
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>
