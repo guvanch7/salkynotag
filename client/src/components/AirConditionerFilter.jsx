@@ -9,7 +9,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     brand: [],
     power: [],
     color: [],
-    homeType: [] // Массив для чекбоксов "Инверторные" и "Неинверторные"
+    homeType: '' // Теперь homeType — строка для радиокнопок
   });
 
   const handleCheckboxChange = (category, value) => {
@@ -21,20 +21,25 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           color: prevFilters.color.includes(value) ? [] : [value]
         };
       } else {
-        // Для остальных категорий оставляем прежнюю логику
         const currentValues = prevFilters[category];
-        const updatedValues = currentValues.includes(value)
-          ? currentValues.filter(item => item !== value)
-          : [...currentValues, value];
-        return { ...prevFilters, [category]: updatedValues };
+        // Если категория не является homeType, то используем прежнюю логику
+        if (category !== 'homeType') {
+          const updatedValues = currentValues.includes(value)
+            ? currentValues.filter(item => item !== value)
+            : [...currentValues, value];
+          return { ...prevFilters, [category]: updatedValues };
+        } else {
+          // Для homeType будем использовать value как строку
+          return { ...prevFilters, homeType: value };
+        }
       }
     });
   };
 
-  // Если "Для Дома" не выбрано, сбрасываем чекбоксы для "Инверторные"/"Неинверторные"
+  // Если "Для Дома" не выбрано, сбрасываем homeType
   useEffect(() => {
-    if (!filters.type.includes('home') && filters.homeType.length > 0) {
-      setFilters(prevFilters => ({ ...prevFilters, homeType: [] }));
+    if (!filters.type.includes('home')) {
+      setFilters(prevFilters => ({ ...prevFilters, homeType: '' }));
     }
   }, [filters.type]);
 
@@ -79,23 +84,27 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                     Для Дома
                   </label>
 
-                  {/* Инверторные и неинверторные (под "Для Дома") */}
+                  {/* Радиокнопки для "Инверторные" и "Неинверторные" (под "Для Дома") */}
                   {filters.type.includes('home') && (
                     <div style={{ paddingLeft: "1.5rem", display: "flex", flexDirection: "column", gap: "0.3rem" }}>
                       <label style={{ fontSize: "0.85rem" }}>
                         <input
-                          type="checkbox"
+                          type="radio"
+                          name="homeType"
+                          value="inverter"
                           style={{ transform: "scale(0.8)", marginRight: "0.3rem" }}
-                          checked={filters.homeType.includes('inverter')}
+                          checked={filters.homeType === 'inverter'}
                           onChange={() => handleCheckboxChange('homeType', 'inverter')}
                         />{' '}
                         Инверторные
                       </label>
                       <label style={{ fontSize: "0.85rem" }}>
                         <input
-                          type="checkbox"
+                          type="radio"
+                          name="homeType"
+                          value="nonInverter"
                           style={{ transform: "scale(0.8)", marginRight: "0.3rem" }}
-                          checked={filters.homeType.includes('nonInverter')}
+                          checked={filters.homeType === 'nonInverter'}
                           onChange={() => handleCheckboxChange('homeType', 'nonInverter')}
                         />{' '}
                         Неинверторные
@@ -161,7 +170,9 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(9000)}
                       onChange={() => handleCheckboxChange('power', 9000)}
                     />{' '}
-                    9000 BTU (до 30м²)
+                    <span style={{ marginLeft: '10px' }}>
+                      9000 BTU (до 30м²)
+                    </span>
                   </label>
                   <label className="me-3">
                     <input
