@@ -98,19 +98,19 @@ function App() {
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
               <div className="d-flex social-icons flex-wrap align-items-center gap-3" style={{fontSize:'.95rem', fontWeight:'500'}}>
-                <a className="text-white social me-5" style={{letterSpacing:'1px'}} href="#">
+                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="#">
                   <MDBIcon className='pe-1'  fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
                 </a>
 
-                <a className="text-white social me-5" style={{letterSpacing:'1px'}} href="mailto:info@salkynotag.com.tm">
+                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="mailto:info@salkynotag.com.tm">
                   <MDBIcon className='pe-1' fas icon="envelope" /> info@salkynotag.com.tm
                 </a>
 
-                <a className="text-white social me-5" style={{letterSpacing:'1px'}} href="tel:+99312754140">
+                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="tel:+99312754140">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40
                 </a>
 
-                <a className="text-white social me-5" style={{letterSpacing:'1px'}} href="tel:+99365508060">
+                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="tel:+99365508060">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 65 50 80 60
                 </a>
               </div>
