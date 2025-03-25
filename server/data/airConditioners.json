@@ -280,7 +280,7 @@
     "color": "white",
     "inverter": true,
     "power": 18000,
-    "price": 8800,
+    "price": 9400,
     "oldPrice": 10000,
     "image": "/prods/21. Gree muse white 18000  INVERTER.jpg",
     "category": "home"
@@ -293,7 +293,7 @@
     "color": "white",
     "inverter": true,
     "power": 18000,
-    "price": 8800,
+    "price": 12600,
     "oldPrice": 10000,
     "image": "/prods/22. Gree muse white 24000  INVERTER.jpg",
     "category": "home"
@@ -307,7 +307,7 @@
     "color": "white",
     "inverter": false,
     "power": 24000,
-    "price": 8800,
+    "price": 10800,
     "oldPrice": 10000,
     "image": "/prods/23. Gree muse white 24000.jpg",
     "category": "home"
@@ -321,7 +321,7 @@
     "color": "white",
     "inverter": true,
     "power": 12000,
-    "price": 8800,
+    "price": 7200,
     "oldPrice": 10000,
     "image": "/prods/24. Gree muse white INVERTER 12000.jpg",
     "category": "home"
