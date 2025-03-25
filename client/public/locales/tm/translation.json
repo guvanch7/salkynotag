@@ -6,7 +6,21 @@
   "navlink5": "HABARLAŞMAK",
   "headerTxt1": "Kondisioneriň hünärli gurnalmagy – onuň netijeli işlemeginiň esasy şertidir.",
   "headerTxt2": "Dünyaniň belli öndürijileriň modelleriň giň saýlawy!",
-  "headerTxt3": "Tehniki hyzmat we kepil hyzmaty"
+  "headerTxt3": "Tehniki hyzmat we kepil hyzmaty",
+  "condType": "Kondisioneriň görnüşleri",
+  "condType1": "Öý üçin",
+  "condType2": "Senagat",
+  "invertor": "Inwertor",
+  "nonInvertor": "Inwertor däl",
+  "brandName": "Kondisioneriň markasy",
+  "capacity":"Kuwwatlygy",
+  "color": "Reňki",
+  "30m2": "(30м² çenli)",
+  "40m2": "(40м² çenli)",
+  "60m2": "(60м² çenli)",
+  "80m2": "(80м² çenli)",
+  "inputSearch": "Gözle",
+    "address":"G. Kuliýew 46, Aşgabat, Turkmenistan"
 
-  
+
 }

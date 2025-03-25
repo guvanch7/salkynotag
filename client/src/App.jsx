@@ -99,7 +99,7 @@ function App() {
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
               <div className="d-flex social-icons flex-wrap align-items-center gap-3" style={{fontSize:'.95rem', fontWeight:'500'}}>
                 <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="#">
-                  <MDBIcon className='pe-1'  fas icon="map-marker-alt" /> Г. Кулиева 46, Ашхабад, Туркменистан
+                  <MDBIcon className='pe-1'  fas icon="map-marker-alt" /> {t("address")}
                 </a>
 
                 <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="mailto:info@salkynotag.com.tm">
@@ -236,7 +236,7 @@ function App() {
                       <input
                         type='search'
                         className='form-control'
-                        placeholder='Search for products'
+                        placeholder={`${t("inputSearch")}`}
                         aria-label='Search'
                         value={searchQuery}
                         onChange={(e) => setSearchQuery(e.target.value)}

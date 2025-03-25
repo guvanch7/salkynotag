@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from "framer-motion";
 import { MDBAccordion, MDBAccordionItem } from "mdb-react-ui-kit";
 // import './AirConditionerFilter.css'; // Подключение кастомных стилей (если требуется)
+import { useTranslation } from 'react-i18next';
 
 const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
   const [filters, setFilters] = useState({
@@ -11,6 +12,13 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     color: [],
     homeType: '' // Теперь homeType — строка для радиокнопок
   });
+
+
+  const { t, i18n } = useTranslation();
+
+  const changeLanguage = (language) => {
+    i18n.changeLanguage(language);
+  };
 
   const handleCheckboxChange = (category, value) => {
     setFilters(prevFilters => {
@@ -73,7 +81,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           {/* Фильтр по типу кондиционеров */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle="Тип кондиционеров:">
+              <MDBAccordionItem collapseId={1} headerTitle={`${t("condType")}`}>
                 <div style={{ display: "flex", flexDirection: "column", gap: "0.5rem" }}>
                   <label>
                     <input
@@ -81,7 +89,8 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.type.includes('home')}
                       onChange={() => handleCheckboxChange('type', 'home')}
                     />{' '}
-                    Для Дома
+                    {t("condType1")}
+                     
                   </label>
 
                   {/* Радиокнопки для "Инверторные" и "Неинверторные" (под "Для Дома") */}
@@ -96,7 +105,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                           checked={filters.homeType === 'inverter'}
                           onChange={() => handleCheckboxChange('homeType', 'inverter')}
                         />{' '}
-                        Инверторные
+                        {t("invertor")}
                       </label>
                       <label style={{ fontSize: "0.85rem" }}>
                         <input
@@ -107,7 +116,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                           checked={filters.homeType === 'nonInverter'}
                           onChange={() => handleCheckboxChange('homeType', 'nonInverter')}
                         />{' '}
-                        Неинверторные
+                        {t("nonInvertor")}
                       </label>
                     </div>
                   )}
@@ -118,7 +127,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.type.includes('industrial')}
                       onChange={() => handleCheckboxChange('type', 'industrial')}
                     />{' '}
-                    Промышленные
+                    {t("condType2")}
                   </label>
                 </div>
               </MDBAccordionItem>
@@ -128,7 +137,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           {/* Фильтр по марке (Бренды) */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle="Марка Кондиционера:">
+              <MDBAccordionItem collapseId={1} headerTitle={`${t("brandName")}`}>
                 <div>
                   <label className="me-3">
                     <input
@@ -162,7 +171,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           {/* Фильтр по мощности */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle="Мощность:">
+              <MDBAccordionItem collapseId={1} headerTitle={`${t("capacity")}`}>
                 <div>
                   <label className="me-3">
                     <input
@@ -171,7 +180,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       onChange={() => handleCheckboxChange('power', 9000)}
                     />{' '}
                     <span style={{ marginLeft: '10px' }}>
-                      9000 BTU (до 30м²)
+                      9000 BTU {t("30m2")}
                     </span>
                   </label>
                   <label className="me-3">
@@ -180,7 +189,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(12000)}
                       onChange={() => handleCheckboxChange('power', 12000)}
                     />{' '}
-                    12000 BTU (до 40м²)
+                    12000 BTU {t("40m2")}
                   </label>
                   <label className="me-3">
                     <input
@@ -188,7 +197,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(18000)}
                       onChange={() => handleCheckboxChange('power', 18000)}
                     />{' '}
-                    18000 BTU (до 60м²)
+                    18000 BTU {t("60m2")}
                   </label>
                   <label>
                     <input
@@ -196,7 +205,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
                       checked={filters.power.includes(24000)}
                       onChange={() => handleCheckboxChange('power', 24000)}
                     />{' '}
-                    24000 BTU (до 80м²)
+                    24000 BTU {t("80m2")}
                   </label>
                 </div>
               </MDBAccordionItem>
@@ -206,7 +215,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
           {/* Фильтр по цвету (цветные блоки вместо чекбоксов) */}
           <div className="filter-section">
             <MDBAccordion flush initialActive={0}>
-              <MDBAccordionItem collapseId={1} headerTitle="Цвет:">
+              <MDBAccordionItem collapseId={1} headerTitle={`${t("color")}`}>
                 <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
                   {colorOptions.map((color) => (
                     <div

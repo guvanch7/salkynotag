@@ -6,6 +6,23 @@
   "navlink5": "CONTACTS",
   "headerTxt1": "Professional air conditioner installation is a key factor for efficient operation",
   "headerTxt2": "A wide range of models from the world's best manufacturers!",
-  "headerTxt3": "Service and warranty maintenance"
+  "headerTxt3": "Service and warranty maintenance",
+  "condType": "Conditionary type",
+  "condType1": "Home",
+  "condType2": "Industrial",
+  "invertor": "Invertor",
+  "nonInvertor": "Non-Invertor",
+  "brandName": "Conditionary brand",
+  "capacity":"Capacity",
+  "color": "Color",
+  "30m2": "(up to 30м²)",
+  "40m2": "(up to 40м²)",
+  "60m2": "(up to 60м²)",
+  "80m2": "(up to 80м²)",
+  "inputSearch": "Искать",
+  "address":"G. Kuliyev 46, Ashgabat, Turkmenistan"
+
+
+
   
 }
