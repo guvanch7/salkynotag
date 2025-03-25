@@ -274,20 +274,20 @@
   },
   {
     "id": 22,
-    "name": "Gree muse white 18000  INVERTER",
+    "name": "Gree muse white 24000  INVERTER",
     "brand": "Gree",
     "size": 65,
     "color": "white",
     "inverter": true,
-    "power": 18000,
+    "power": 24000,
     "price": 9400,
     "oldPrice": 10000,
-    "image": "/prods/21. Gree muse white 18000  INVERTER.jpg",
+    "image": "/prods/21. Gree muse white 24000  INVERTER.jpg",
     "category": "home"
   },
   {
     "id": 23,
-    "name": "Gree muse white 24000 INVERTER",
+    "name": "Gree muse white 18000 INVERTER",
     "brand": "Gree",
     "size": 65,
     "color": "white",
@@ -295,7 +295,7 @@
     "power": 18000,
     "price": 12600,
     "oldPrice": 10000,
-    "image": "/prods/22. Gree muse white 24000  INVERTER.jpg",
+    "image": "/prods/22. Gree muse white 18000  INVERTER.jpg",
     "category": "home"
   },
 
