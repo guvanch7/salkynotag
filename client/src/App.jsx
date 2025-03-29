@@ -5,6 +5,8 @@ import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom';
 import './App.css'
 import './assets/style/navbar.css';
 import Home from './pages/Home';
+import Contacts from './pages/Contacts';
+
 import Prel from './components/Preloader';
 
 import {
@@ -18,6 +20,7 @@ import {
   MDBCol,
   MDBContainer,
   MDBIcon,
+  MDBFooter,
   MDBBtn,
   MDBRow,
   MDBCollapse,
@@ -47,7 +50,7 @@ function App() {
   const [searchQuery, setSearchQuery] = useState('');
   const targetRef = useRef(null);
 
-   
+
   const [lastScrollTop, setLastScrollTop] = useState(0);
   const threshold = 50; // порог активного скролла вверх для появления
 
@@ -60,7 +63,7 @@ function App() {
   useEffect(() => {
     const handleScroll = () => {
       const currentScroll = window.pageYOffset || document.documentElement.scrollTop;
-      
+
       // Если прокручиваем вниз и уже прокрутили немного (например, больше 50px), скрываем навбар
       if (currentScroll > lastScrollTop && currentScroll > 50) {
         setScrolled(true);
@@ -69,7 +72,7 @@ function App() {
       else if (lastScrollTop - currentScroll > threshold) {
         setScrolled(false);
       }
-      
+
       setLastScrollTop(currentScroll <= 0 ? 0 : currentScroll);
     };
 
@@ -90,27 +93,27 @@ function App() {
   return (
     <>
       <Router>
-      <Prel />
+        <Prel />
         <div>
 
-          
+
 
           <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
-              <div className="d-flex social-icons flex-wrap align-items-center gap-3" style={{fontSize:'.95rem', fontWeight:'500'}}>
-                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="#">
-                  <MDBIcon className='pe-1'  fas icon="map-marker-alt" /> {t("address")}
+              <div className="d-flex social-icons flex-wrap align-items-center gap-3" style={{ fontSize: '.95rem', fontWeight: '500' }}>
+                <a className="text-white social me-4" style={{ letterSpacing: '1px' }} href="#">
+                  <MDBIcon className='pe-1' fas icon="map-marker-alt" /> {t("address")}
                 </a>
 
-                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="mailto:info@salkynotag.com.tm">
+                <a className="text-white social me-4" style={{ letterSpacing: '1px' }} href="mailto:info@salkynotag.com.tm">
                   <MDBIcon className='pe-1' fas icon="envelope" /> info@salkynotag.com.tm
                 </a>
 
-                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="tel:+99312754140">
+                <a className="text-white social me-4" style={{ letterSpacing: '1px' }} href="tel:+99312754140">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 12 75 41 40
                 </a>
 
-                <a className="text-white social me-4" style={{letterSpacing:'1px'}} href="tel:+99365508060">
+                <a className="text-white social me-4" style={{ letterSpacing: '1px' }} href="tel:+99365508060">
                   <MDBIcon className='pe-1' fas icon="phone" /> +993 65 50 80 60
                 </a>
               </div>
@@ -128,7 +131,7 @@ function App() {
                 <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-1 social">
                   <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                 </a>
-                
+
                 <a href="#" className="p-1 social">
                   <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
                 </a>
@@ -224,9 +227,9 @@ function App() {
                         <MDBIcon fas icon="globe" />
                       </MDBDropdownToggle>
                       <MDBDropdownMenu>
-                        <MDBDropdownItem  onClick={() => changeLanguage('tm')} link> Türkmençe </MDBDropdownItem>
-                        <MDBDropdownItem  onClick={() => changeLanguage('ru')} link> Русский   </MDBDropdownItem>
-                        <MDBDropdownItem  onClick={() => changeLanguage('en')} link> English   </MDBDropdownItem>
+                        <MDBDropdownItem onClick={() => changeLanguage('tm')} link> Türkmençe </MDBDropdownItem>
+                        <MDBDropdownItem onClick={() => changeLanguage('ru')} link> Русский   </MDBDropdownItem>
+                        <MDBDropdownItem onClick={() => changeLanguage('en')} link> English   </MDBDropdownItem>
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>
@@ -262,9 +265,88 @@ function App() {
 
           <Routes>
             <Route path='/' element={<Home searchQuery={searchQuery} targetRef={targetRef} />} ></Route>
+            <Route path='/contacts' element={<Contacts />} ></Route>
+
           </Routes>
           {/* <Home /> */}
+          <MDBFooter bgColor='light' className=' text-center text-lg-start text-muted'>
 
+
+            <section className='text-black'>
+              <MDBContainer className='text-center text-md-start  '>
+                <MDBRow className='pt-5'>
+                  <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>
+                      <img src={logob} className='img-fluid w-75' alt="" />
+
+                    </h6>
+                    <p>
+
+                    </p>
+                  </MDBCol>
+
+                  <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>Esasy</h6>
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink1")}
+                      </Link>
+                    </p>
+                    <p>
+                      <Link to={'/about'} className='text-reset'>
+                        {t("navlink2")}
+                      </Link>
+                    </p>
+                    <p>
+                      <Link to={'/contacts'} className='text-reset'>
+                        {t("navlink3")}
+                      </Link>
+                    </p>
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink4")}
+                      </Link>
+                    </p>
+                  </MDBCol>
+
+                  <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>Goşmaça</h6>
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink5")}
+
+                      </Link>
+                    </p>
+
+
+                  </MDBCol>
+
+                  <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>Habarlaşmak üçin</h6>
+                    <p>
+                      <MDBIcon color='secondary' icon='home' className='me-2' />
+                      {t("address")}
+                    </p>
+
+                    <p>
+                      <MDBIcon color='secondary' icon='envelope' className='me-3' />
+                      info@salkynotag.com.tm
+                    </p>
+                    <p>
+                      <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
+                    </p>
+                    <p>
+                      <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
+                    </p>
+                  </MDBCol>
+                </MDBRow>
+              </MDBContainer>
+            </section>
+
+            <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+              <p>© Salkyn Otag. Ähli hukuklar goragly</p>
+            </div>
+          </MDBFooter>
         </div>
       </Router>
     </>

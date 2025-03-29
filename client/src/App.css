@@ -358,3 +358,17 @@ input[type="checkbox"]:focus{
   margin-top: 1rem;
 }
 
+.form {
+  border: none;
+  outline: none;
+  /* background-color: #eae9e9; */
+  min-height: auto;
+  padding-top: .82rem;
+  padding-bottom: .82rem;
+  padding-left: .75rem;
+  padding-right: .75rem;
+  border: 0;
+  border-bottom: 1px solid black;
+  /* border-radius: 5px; */
+  width: 100%;
+}
