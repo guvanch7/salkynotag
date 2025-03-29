@@ -6,6 +6,7 @@ import './App.css'
 import './assets/style/navbar.css';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
+import Partners from './pages/Partners';
 
 import Prel from './components/Preloader';
 
@@ -13,6 +14,7 @@ import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
+  MDBInput,
   MDBNavbarItem,
   MDBNavbarLink,
   MDBNavbarToggler,
@@ -27,7 +29,8 @@ import {
   MDBDropdown,
   MDBDropdownToggle,
   MDBDropdownMenu,
-  MDBDropdownItem
+  MDBDropdownItem,
+  MDBInputGroup
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'react-i18next';
 // import './i18n';
@@ -153,7 +156,7 @@ function App() {
 
           >
             <MDBContainer fluid>
-              <MDBNavbarBrand className='-5' href="#">
+              <MDBNavbarBrand className='me-4' href="#">
                 <img src={logob} style={{ height: '85px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
@@ -266,63 +269,31 @@ function App() {
           <Routes>
             <Route path='/' element={<Home searchQuery={searchQuery} targetRef={targetRef} />} ></Route>
             <Route path='/contacts' element={<Contacts />} ></Route>
+            <Route path='/partners' element={<Partners />} ></Route>
 
           </Routes>
           {/* <Home /> */}
-          <MDBFooter bgColor='light' className=' text-center text-lg-start text-muted'>
+          <MDBFooter className=' text-center text-lg-start text-muted' style={{ backgroundColor: "rgb(11, 85, 94)" }}>
+            <section className='d-flex justify-content-center justify-content-center  border-bottom' >
 
 
-            <section className='text-black'>
+              <div>
+
+                <MDBNavbarBrand className='' href="#" >
+                  <img src={logow} style={{ height: '95px', transition: "0.3s ease-in-out" }}
+                    alt="Brand Logo" />
+                </MDBNavbarBrand>
+
+
+              </div>
+            </section>
+
+            <section className='text-white'>
               <MDBContainer className='text-center text-md-start  '>
                 <MDBRow className='pt-5'>
                   <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
-                    <h6 className='text-uppercase fw-bold mb-4'>
-                      <img src={logob} className='img-fluid w-75' alt="" />
 
-                    </h6>
-                    <p>
-
-                    </p>
-                  </MDBCol>
-
-                  <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
-                    <h6 className='text-uppercase fw-bold mb-4'>Esasy</h6>
-                    <p>
-                      <Link to={'/'} className='text-reset'>
-                        {t("navlink1")}
-                      </Link>
-                    </p>
-                    <p>
-                      <Link to={'/about'} className='text-reset'>
-                        {t("navlink2")}
-                      </Link>
-                    </p>
-                    <p>
-                      <Link to={'/contacts'} className='text-reset'>
-                        {t("navlink3")}
-                      </Link>
-                    </p>
-                    <p>
-                      <Link to={'/'} className='text-reset'>
-                        {t("navlink4")}
-                      </Link>
-                    </p>
-                  </MDBCol>
-
-                  <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-                    <h6 className='text-uppercase fw-bold mb-4'>Goşmaça</h6>
-                    <p>
-                      <Link to={'/'} className='text-reset'>
-                        {t("navlink5")}
-
-                      </Link>
-                    </p>
-
-
-                  </MDBCol>
-
-                  <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
-                    <h6 className='text-uppercase fw-bold mb-4'>Habarlaşmak üçin</h6>
+                    <h6 className='text-uppercase fw-bold mb-4'> {t("navlink5")}</h6>
                     <p>
                       <MDBIcon color='secondary' icon='home' className='me-2' />
                       {t("address")}
@@ -339,12 +310,84 @@ function App() {
                       <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
                     </p>
                   </MDBCol>
+
+                  <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>{t("company")}</h6>
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink1")}
+                      </Link>
+                    </p>
+                    <p>
+                      <Link to={'/about'} className='text-reset'>
+                        {t("navlink2")}
+                      </Link>
+                    </p>
+
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink4")}
+                      </Link>
+                    </p>
+                  </MDBCol>
+
+                  <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
+                    <h6 className='text-uppercase fw-bold mb-4'>Goşmaça</h6>
+
+                    <p>
+                      <Link to={'/partners'} className='text-reset'>
+                        {t("navlink3")}
+                      </Link>
+                    </p>
+
+                    <p>
+                      <Link to={'/'} className='text-reset'>
+                        {t("navlink5")}
+
+                      </Link>
+                    </p>
+
+
+                  </MDBCol>
+
+                  <MDBCol md='4' lg='3' xl='3' className='mx-auto mb-md-0 mb-4'>
+                    <MDBCard className='bg-light text-black p-3'>
+                      <h6>{t("newsletter")}</h6>
+                      <MDBCol className='mb-4 mb-md-0'>
+                        <MDBInputGroup className='mb-3'>
+                          <input className='form-control' placeholder='' type='text' />
+
+                          <MDBBtn style={{ backgroundColor: "rgb(11, 85, 94)" }} >{t("subsBtn")}</MDBBtn>
+                        </MDBInputGroup>
+                        {/* <p className='text-muted'>Will send you weekly updates for your better tool management</p> */}
+
+                      </MDBCol>
+                    </MDBCard>
+
+                    <div className="social-icons mt-2 d-flex align-items-center justify-content-evenly gap-3">
+                      <a href="https://www.instagram.com/salkyn_otag/" className="p-1 social">
+                        <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
+                      </a>
+
+                      <a href="https://www.tiktok.com/@salkyn_otag" className=" p-1 social">
+                        <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
+                      </a>
+
+                      <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-1 social">
+                        <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
+                      </a>
+
+                      <a href="#" className="p-1 social">
+                        <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
+                      </a>
+                    </div>
+                  </MDBCol>
                 </MDBRow>
               </MDBContainer>
             </section>
 
-            <div className='text-center p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
-              <p>© Salkyn Otag. Ähli hukuklar goragly</p>
+            <div className='text-center text-white p-4' style={{ backgroundColor: 'rgba(0, 0, 0, 0.05)' }}>
+              <p>© Salkyn Otag. {t("copyright")} </p>
             </div>
           </MDBFooter>
         </div>

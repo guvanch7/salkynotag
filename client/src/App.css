@@ -18,8 +18,16 @@ span,
 select,
 option {
   font-family: "Roboto Condensed", sans-serif;
- 
- 
+
+
+}
+
+.color {
+  color: #C9C9C9;
+}
+
+.mt-7 {
+  margin-top: 5rem;
 }
 
 
@@ -275,12 +283,13 @@ option {
   background-color: unset;
   box-shadow: unset;
 }
+
 .accordion-flush .accordion-button:not(.collapsed) {
   box-shadow: unset;
   /* border-bottom: .1em solid rgb(179, 179, 179); */
 }
 
-.accordion-header button{
+.accordion-header button {
   margin-bottom: 0;
   font-weight: 500;
   font-size: 1.5rem;
@@ -293,48 +302,49 @@ option {
 
 input[type="checkbox"] {
   width: 18px;
-  height: 18px; 
+  height: 18px;
   margin-right: 10px;
-  accent-color: #007bff; /* Меняет цвет галочки в современных браузерах */
+  accent-color: #007bff;
+  /* Меняет цвет галочки в современных браузерах */
 }
 
 
 input[type="checkbox"]:focus,
 .filter-section div:focus {
   outline: none;
-   
+
 }
 
-input[type="checkbox"]:focus{
+input[type="checkbox"]:focus {
   background-color: black;
 }
 
-.card2{
+.card2 {
   background-color: unset;
   box-shadow: none;
   cursor: pointer;
   transition: .2s;
 }
 
-.card2:hover{
+.card2:hover {
   padding: 10px;
   transition: .2s;
 }
 
-.card-body{
+.card-body {
   padding: 10px 0px;
 }
 
- /* Accordion */
+/* Accordion */
 
 
-.accordion-button{
+.accordion-button {
   padding: unset;
   /* padding-bottom: 25px; */
   margin-bottom: 50px;
 }
 
-.accordion-item{
+.accordion-item {
   margin-bottom: 20px;
 }
 
@@ -352,7 +362,7 @@ input[type="checkbox"]:focus{
   transition: border-color 0.3s ease, box-shadow 0.3s ease;
 }
 
- 
+
 
 .select-home-type {
   margin-top: 1rem;
@@ -371,4 +381,62 @@ input[type="checkbox"]:focus{
   border-bottom: 1px solid black;
   /* border-radius: 5px; */
   width: 100%;
+}
+
+@keyframes moveAround {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(10px, -10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+@keyframes moveAroundReverse {
+  0% {
+    transform: translate(0, 0);
+  }
+
+  50% {
+    transform: translate(-10px, 10px);
+  }
+
+  100% {
+    transform: translate(0, 0);
+  }
+}
+
+.circle {
+  position: absolute;
+  background: rgba(255, 255, 255, 0.1);
+  border-radius: 50%;
+  z-index: 0;
+  animation: moveAround 5s infinite ease-in-out alternate;
+}
+
+.conta {
+  overflow: hidden;
+  /* Обрезает всё, что выходит за границы */
+
+}
+
+.circle-small {
+  width: 138px;
+  height: 138px;
+  bottom: 90px;
+  right: 90px;
+  animation: moveAroundReverse 6s infinite ease-in-out alternate;
+
+}
+
+.circle-large {
+  width: 269px;
+  height: 269px;
+  bottom: -70px;
+  right: -70px;
 }

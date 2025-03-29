@@ -15,11 +15,27 @@
   "brandName": "Conditionary brand",
   "capacity":"Capacity",
   "color": "Color",
-  "30m2": "(up to 30м²)",
-  "40m2": "(up to 40м²)",
-  "60m2": "(up to 60м²)",
-  "80m2": "(up to 80м²)",
-  "inputSearch": "Искать",
-  "address":"G. Kuliyev 46, Ashgabat, Turkmenistan"
+  "30m2": "(up to 30m²)",
+  "40m2": "(up to 40m²)",
+  "60m2": "(up to 60m²)",
+  "80m2": "(up to 80m²)",
+  "inputSearch": "Search",
+  "address":"G. Kuliyev 46, Ashgabat, Turkmenistan",
+  "contactUs": "Contact Us",
+  "contactPar": "Any question or remarks? Just write us a message!",
+  "contactInfo": "Contact Information",
+  "contactInfoTxt": "Our company managers will be delighted to answer your questions, provide cost estimates for services, and prepare individual commercial proposals for you.",
+  "company": "Company",
+  "copyright": "All rights reserved",
+  "newsletter": "Join our newsletter",
+  "subsBtn": "Subscribe"
 
+
+
+  
+
+  
+
+
+  
 }

@@ -13,14 +13,20 @@
   "invertor": "Inwertor",
   "nonInvertor": "Inwertor däl",
   "brandName": "Kondisioneriň markasy",
-  "capacity":"Kuwwatlygy",
+  "capacity": "Kuwwatlygy",
   "color": "Reňki",
   "30m2": "(30м² çenli)",
   "40m2": "(40м² çenli)",
   "60m2": "(60м² çenli)",
   "80m2": "(80м² çenli)",
   "inputSearch": "Gözle",
-    "address":"G. Kuliýew 46, Aşgabat, Turkmenistan"
-
-
+  "address": "G. Kuliýew 46, Aşgabat, Turkmenistan",
+  "contactUs": "Habarlaşmak üçin",
+  "contactPar": "Islendik soragyňyz ýa-da teklibiňiz barmy? Bize ýönekeýje habar ýazyň!",
+  "contactInfo": "Habarlaşmak üçin maglumat",
+  "contactInfoTxt":"Biziň menejerlerimiz soraglaryňyza jogap bermäge, hyzmatlaryň bahasyny hasaplamaga we siziň üçin aýratyn kommersiýa tekliplerini taýýarlamaga şat bolar.",
+  "company": "Kompaniýamyz",
+  "copyright": "Ähli hukuklar goragly",
+  "newsletter": "Habarnamamyza ýazylyň",
+  "subsBtn": "Goşulmak"
 }
