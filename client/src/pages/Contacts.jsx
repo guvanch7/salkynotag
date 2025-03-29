@@ -70,7 +70,6 @@ const Contacts = () => {
                             width="850" height="597" style={{ border: "0" }}
                             allowfullscreen="" loading="lazy"
                             referrerpolicy="no-referrer-when-downgrade">
-
                         </iframe>
                     </MDBCol>
 
