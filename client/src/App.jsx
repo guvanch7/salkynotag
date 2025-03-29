@@ -101,7 +101,7 @@ function App() {
 
 
 
-          <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar py-2">
+          <MDBNavbar light style={{ backgroundColor: '#0b555e' }} className="container-fluid topbar  py-2">
             <MDBContainer fluid className="d-flex justify-content-between align-items-center topbar-content">
               <div className="d-flex social-icons flex-wrap align-items-center gap-3" style={{ fontSize: '.95rem', fontWeight: '500' }}>
                 <a className="text-white social me-4" style={{ letterSpacing: '1px' }} href="#">
@@ -156,8 +156,8 @@ function App() {
 
           >
             <MDBContainer fluid>
-              <MDBNavbarBrand className='me-4' href="#">
-                <img src={logob} style={{ height: '85px', transition: "0.3s ease-in-out" }}
+              <MDBNavbarBrand  href="#">
+                <img src={logob}  style={{ height: '85px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
 

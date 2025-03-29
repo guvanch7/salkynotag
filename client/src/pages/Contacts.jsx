@@ -30,7 +30,7 @@ const Contacts = () => {
                     <h1 className='text-black text-center'>{t("contactUs")}</h1>
                     <p className='text-center'>{t("contactPar")}</p>
 
-                    <MDBCol className='conta shadow-5 rounded-6 text-white p-5 position-relative' style={{ backgroundColor: "rgb(11, 85, 94)" }} data-aos="fade-right" lg={4}>
+                    <MDBCol className='conta shadow-5 rounded-6 text-white p-5 position-relative mb-2' style={{ backgroundColor: "rgb(11, 85, 94)" }} data-aos="fade-right" lg={4}>
 
 
                         <div className="circle circle-small"></div>
@@ -65,7 +65,7 @@ const Contacts = () => {
                         </div>
                     </MDBCol>
 
-                    <MDBCol data-aos="fade-left" lg={8} sm={12} className="map-container">
+                    <MDBCol data-aos="fade-left" lg={8} sm={12} className="map-container  ">
                         <div style={{ position: "relative", width: "100%", paddingTop: "56.25%" }}>
                             <iframe
                                 src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3145.572964698913!2d58.414742899999986!3d37.963755899999995!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3f6fff71e741adf9%3A0xe504828d303c60db!2sHK%20Salkyn%20Otag!5e0!3m2!1sru!2snl!4v1743200445436!5m2!1sru!2snl"

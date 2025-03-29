@@ -70,6 +70,8 @@ option {
 }
 
 /* HEADER */
+
+
 .parallax-header {
   height: 100px;
 }
@@ -125,7 +127,6 @@ option {
     text-align: center;
   }
 }
-
 /* SLIDER HEADER */
 .btn-design {
   height: 1rem;
@@ -154,6 +155,7 @@ option {
   position: absolute;
 }
 
+/* Стили для кнопок переключения слайдов */
 .slider-btn {
   background: rgba(255, 255, 255, 0.4);
   transition: background 0.3s ease-in-out;
@@ -163,11 +165,59 @@ option {
   background: white;
 }
 
+/* Для десктопов — кнопки справа по центру */
+.btn-container {
+  position: absolute;
+  top: 50%;
+  right: 20px;
+  transform: translateY(-50%);
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-/* WorkProçess */
+/* Адаптив для экранов с шириной 430px */
+@media (max-width: 430px) {
+  /* Лёгкое уменьшение масштаба фонового изображения */
+  .background-image {
+    transform: scale(0.5);
+  }
+  
+  /* Изменение высоты контейнера для мобильных */
+  .header-container {
+    height: 44vh;
+  }
+  
+  /* Кнопки переключения: в нижней центральной части */
+  .btn-container {
+    top: auto;
+    right: auto;
+    bottom: 20px;
+    left: 80%;
+    transform: translateX(-50%);
+    flex-direction: row;
+  }
+}
+
+/* Стили для заголовка на всех устройствах */
+.text-header {
+  word-break: break-word;
+  max-width: 90%;
+  margin: 0 auto;
+}
+
+/* Медиазапрос для экранов до 430px */
+@media (max-width: 430px) {
+  .text-header {
+    font-size: clamp(1.8rem, 7vw, 2.8rem); /* адаптивный размер шрифта */
+    text-align: unset;
+    padding: 0 1rem;
+  }
+}
+
+/* WorkProcess */
 .circle-buttons {
   display: flex;
-
 }
 
 /* Базовые стили для кнопок-кругов */
