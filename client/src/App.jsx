@@ -197,7 +197,7 @@ function App() {
 
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink>
-                      <Link to="/certifications" className="nav-link">
+                      <Link to="/partners" className="nav-link">
                         {t("navlink3")}
 
                       </Link>
@@ -332,7 +332,7 @@ function App() {
                   </MDBCol>
 
                   <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
-                    <h6 className='text-uppercase fw-bold mb-4'>Goşmaça</h6>
+                    <h6 className='text-uppercase fw-bold mb-4'> {t("additional")}</h6>
 
                     <p>
                       <Link to={'/partners'} className='text-reset'>
@@ -343,7 +343,6 @@ function App() {
                     <p>
                       <Link to={'/'} className='text-reset'>
                         {t("navlink5")}
-
                       </Link>
                     </p>
 

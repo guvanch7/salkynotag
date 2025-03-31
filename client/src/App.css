@@ -524,3 +524,15 @@ input[type="checkbox"]:focus {
   bottom: -70px;
   right: -70px;
 }
+
+
+.map-container {
+  display: flex;
+  flex-grow: 1;
+  min-height: 400px; /* Минимальная высота */
+}
+
+.map-container iframe {
+  flex-grow: 1;
+  height: 100%;
+}
