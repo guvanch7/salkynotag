@@ -79,7 +79,8 @@ const Partners = () => {
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={teleradio} alt="Clients" /></a></li>
                         </ul>
                     </MDBCol>
-
+                    <h1 className='text-center'>Others Partners</h1>
+                    <h4 className='text-muted text-center fw-light'>Holisticly incubate enterprise users whereas just in time sources. Rapidiously transition performance based e-business.</h4>
                     <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 mb-0">
                         <li class="col-padding p-3"><a class="op-08" href="#"><img src={tmcell} className='img-fluid' alt="Clients" /></a></li>
                         <li class="col-padding p-3"><a class="op-08" href="#"><img src={toyota} className='img-fluid' alt="Clients" /></a></li>
