@@ -282,11 +282,7 @@ function Home({ searchQuery, targetRef  }) {
                 {/* <Work /> */}
 
 
-                {/* <MDBContainer className="mt-5">
-                    <MDBRow>
-                        <h1 className="text-black">Наши партнеры</h1>
-                    </MDBRow>
-                </MDBContainer> */}
+              
 
             </div>
 

@@ -6,7 +6,9 @@ import './App.css'
 import './assets/style/navbar.css';
 import Home from './pages/Home';
 import Contacts from './pages/Contacts';
+import Services from './pages/Services';
 import Partners from './pages/Partners';
+import About from './pages/About';
 
 import Prel from './components/Preloader';
 
@@ -193,7 +195,13 @@ function App() {
                     </MDBNavbarLink>
                   </MDBNavbarItem>
 
-
+                  <MDBNavbarItem className="me-4">
+                    <MDBNavbarLink>
+                      <Link to="/services" className="nav-link">
+                        {t("navlink6")}
+                      </Link>
+                    </MDBNavbarLink>
+                  </MDBNavbarItem>
 
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink>
@@ -205,9 +213,11 @@ function App() {
                   </MDBNavbarItem>
 
 
+
+
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink>
-                      <Link to="/certifications" className="nav-link">
+                      <Link to="/about" className="nav-link">
                         {t("navlink4")}
 
                       </Link>
@@ -270,9 +280,12 @@ function App() {
             <Route path='/' element={<Home searchQuery={searchQuery} targetRef={targetRef} />} ></Route>
             <Route path='/contacts' element={<Contacts />} ></Route>
             <Route path='/partners' element={<Partners />} ></Route>
-
+            <Route path='/about' element={<About />} ></Route>
+            <Route path='/services' element={<Services />} ></Route>
           </Routes>
-          {/* <Home /> */}
+         
+
+
           <MDBFooter className=' text-center text-lg-start text-muted' style={{ backgroundColor: "rgb(11, 85, 94)" }}>
             <section className='d-flex justify-content-center justify-content-center  border-bottom' >
 

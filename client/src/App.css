@@ -536,3 +536,23 @@ input[type="checkbox"]:focus {
   flex-grow: 1;
   height: 100%;
 }
+
+
+/* SHAPE */
+
+
+.icon-container {
+  width: 80px;  /* Ширина */
+  height: 100px; /* Высота */
+  background-color: rgba(57,108,109,255); /* Цвет фона */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  clip-path: polygon(50% 10%, 100% 0%, 100% 90%, 50% 100%, 0% 90%, 0% 0%);
+  position: relative;
+}
+
+.icon-container i {
+  color: #fff; /* Цвет иконки */
+  font-size: 24px; /* Размер иконки */
+}

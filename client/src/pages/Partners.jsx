@@ -26,6 +26,7 @@ import hyundai from '../assets/partners/hyundai.png'
 import who from '../assets/partners/who.png'
 import aktoprak from '../assets/partners/aktoprak.png'
 import morin from '../assets/partners/morin.png'
+import chatma from '../assets/partners/chatma.png'
 import './partner.css'
 
 
@@ -47,7 +48,7 @@ const Partners = () => {
                 <h1 className='text-center text-black'> {t("partners")}</h1>
                 <p className='text-center'> {t("partnerSlogan")}</p>
                 <MDBRow>
-                    <MDBCol lg={5}>
+                    <MDBCol lg={12}>
                         <h2 className='text-black'>Most Valuable Investors</h2>
                         <h4 className='text-muted fw-light'>Dramatically orchestrate multimedia.</h4>
                         <p>
@@ -63,8 +64,10 @@ const Partners = () => {
 
 
 
-                    <MDBCol lg={7}>
-                        <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-4  mb-0">
+
+                    <MDBCol lg={12}>
+
+                        <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 mb-0">
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={bouygues} alt="Clients" /></a></li>
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={gazprom} alt="Clients" /></a></li>
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={byy} alt="Clients" /></a></li>
@@ -77,22 +80,20 @@ const Partners = () => {
                             <li class="col-padding" style={{ paddingTop: '3.3rem' }}><a class="op-08" href="#"><img className='img-fluid' src={softline} alt="Clients" /></a></li>
                             <li class="col-padding" style={{ paddingTop: '3.9rem' }}><a class="op-08 " href="#"><img className='img-fluid' src={telecom} alt="Clients" /></a></li>
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={teleradio} alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={tmcell} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={toyota} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={unrcca} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={vneshka} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={gurlusyk} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={belarus} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={hyundai} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={who} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={aktoprak} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={morin} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={chatma} className='img-fluid' alt="Clients" /></a></li>
                         </ul>
                     </MDBCol>
-                    <h1 className='text-center'>Others Partners</h1>
-                    <h4 className='text-muted text-center fw-light'>Holisticly incubate enterprise users whereas just in time sources. Rapidiously transition performance based e-business.</h4>
-                    <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 mb-0">
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={tmcell} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={toyota} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={unrcca} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={vneshka} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={gurlusyk} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={belarus} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={hyundai} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={who} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={aktoprak} className='img-fluid' alt="Clients" /></a></li>
-                        <li class="col-padding p-3"><a class="op-08" href="#"><img src={morin} className='img-fluid' alt="Clients" /></a></li>
-                    </ul>
+
                 </MDBRow>
             </MDBContainer>
         </>
