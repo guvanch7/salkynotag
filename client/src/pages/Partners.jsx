@@ -49,16 +49,17 @@ const Partners = () => {
                 <p className='text-center'> {t("partnerSlogan")}</p>
                 <MDBRow>
                     <MDBCol lg={12}>
-                        <h2 className='text-black'>Most Valuable Investors</h2>
-                        <h4 className='text-muted fw-light'>Dramatically orchestrate multimedia.</h4>
+                        <h2 className='text-black'>Партнеры</h2>
+                        <h4 className='text-muted fw-light'></h4>
                         <p>
-                            Holisticly incubate enterprise users whereas just in time sources.
-                            Rapidiously transition performance based e-business.
-                            Rapidiously implement out-of-the-box content with alternative data.
-                            Collaboratively simplify seamless initiatives through sustainable infomediaries.
-                            Holisticly aggregate bleeding-edge expertise. Holisticly incubate enterprise users
-                            whereas just in time sources. Rapidiously transition performance based e-business.
-                            Rapidiously implement out-of-the-box content with alternative data.
+                            ИП «Салкын Отаг» активно ищет партнёров, а также продукты, интересные для рынка Туркменистана. Мы всегда открыты для новых идей и моделей сотрудничества. Стратегическая цель «Салкын Отаг» – постоянное развитие портфеля продуктов и увеличение продаж. Почему мы можем считать себя лучшим партнёром:
+                    <br />        • Глубокое знание рынка позволяет нам функционировать во всех городах Туркменистана и осуществлять продажи по выгодным ценам, а сервис качественно и в срок.
+                    <br />        • Мы нацелены на долгосрочные партнёрские отношения.
+                    <br />        • Эффективная организация логистики, и последующая цепочка продаж и маркетинга.
+                    <br />        • Собственная команда инженеров и технический состав с международной квалификацией.
+                    <br />        • Хорошо развитые функции PR.
+                    <br />        • Следование этическим нормам ведения бизнеса.
+                    <br />        В качестве первого шага к успешному партнерству свяжитесь с нами для получения более подробной информации.
                         </p>
                     </MDBCol>
 
