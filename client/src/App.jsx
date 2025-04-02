@@ -314,7 +314,7 @@ function App() {
                       <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
                     </p>
                     <p>
-                      <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
+                      <MDBIcon color='secondary' icon='phone' className='me-3' />+993 65 50 80 60
                     </p>
                   </MDBCol>
 
