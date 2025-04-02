@@ -187,13 +187,7 @@ function App() {
                     </MDBNavbarLink>
                   </MDBNavbarItem>
 
-                  <MDBNavbarItem className="me-4">
-                    <MDBNavbarLink>
-                      <Link to="/about" className="nav-link">
-                        {t("navlink2")}
-                      </Link>
-                    </MDBNavbarLink>
-                  </MDBNavbarItem>
+                 
 
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink>

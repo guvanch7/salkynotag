@@ -127,6 +127,7 @@ option {
     text-align: center;
   }
 }
+
 /* SLIDER HEADER */
 .btn-design {
   height: 1rem;
@@ -178,16 +179,17 @@ option {
 
 /* Адаптив для экранов с шириной 430px */
 @media (max-width: 430px) {
+
   /* Лёгкое уменьшение масштаба фонового изображения */
   .background-image {
     transform: scale(0.5);
   }
-  
+
   /* Изменение высоты контейнера для мобильных */
   .header-container {
     height: 44vh;
   }
-  
+
   /* Кнопки переключения: в нижней центральной части */
   .btn-container {
     top: auto;
@@ -209,7 +211,8 @@ option {
 /* Медиазапрос для экранов до 430px */
 @media (max-width: 430px) {
   .text-header {
-    font-size: clamp(1.8rem, 7vw, 2.8rem); /* адаптивный размер шрифта */
+    font-size: clamp(1.8rem, 7vw, 2.8rem);
+    /* адаптивный размер шрифта */
     text-align: unset;
     padding: 0 1rem;
   }
@@ -529,7 +532,8 @@ input[type="checkbox"]:focus {
 .map-container {
   display: flex;
   flex-grow: 1;
-  min-height: 400px; /* Минимальная высота */
+  min-height: 400px;
+  /* Минимальная высота */
 }
 
 .map-container iframe {
@@ -542,9 +546,12 @@ input[type="checkbox"]:focus {
 
 
 .icon-container {
-  width: 80px;  /* Ширина */
-  height: 100px; /* Высота */
-  background-color: rgba(57,108,109,255); /* Цвет фона */
+  width: 80px;
+  /* Ширина */
+  height: 100px;
+  /* Высота */
+  background-color: rgba(57, 108, 109, 255);
+  /* Цвет фона */
   display: flex;
   align-items: center;
   justify-content: center;
@@ -553,6 +560,34 @@ input[type="checkbox"]:focus {
 }
 
 .icon-container i {
-  color: #fff; /* Цвет иконки */
-  font-size: 24px; /* Размер иконки */
+  color: #fff;
+  /* Цвет иконки */
+  font-size: 24px;
+  /* Размер иконки */
+}
+
+
+.linee {
+  height: 3px;
+  background-color: #166e05;
+  width: 7rem;
+}
+
+.image {
+  width: 47rem;
+  border-bottom-left-radius: 1rem;
+  mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 1) 100%);
+  -webkit-mask-image: linear-gradient(to right, rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, .9) 100%);
+}
+
+p,
+h4 {
+  margin-bottom: 0;
+}
+
+.uniqueBg {
+  background: radial-gradient(circle, rgba(0, 20, 20, 0.6) 10%, rgba(0, 38, 38, 0.5) 30%, rgba(0, 60, 60, 0.4) 70%, rgba(0, 80, 80, 0.3) 100%);
+  color: white;
+  font-family: Arial, sans-serif;
+
 }
