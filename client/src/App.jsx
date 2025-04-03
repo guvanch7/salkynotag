@@ -326,13 +326,13 @@ function App() {
                       </Link>
                     </p>
                     <p className='pb-2'>
-                      <Link to={'/about'} className='text-reset'>
-                        {t("navlink2")}
+                      <Link to={'/services'} className='text-reset'>
+                        {t("navlink6")}
                       </Link>
                     </p>
 
                     <p className='pb-2'>
-                      <Link to={'/'} className='text-reset'>
+                      <Link to={'/about'} className='text-reset'>
                         {t("navlink4")}
                       </Link>
                     </p>
@@ -348,7 +348,7 @@ function App() {
                     </p>
 
                     <p className='pb-2'>
-                      <Link to={'/'} className='text-reset'>
+                      <Link to={'/contacts'} className='text-reset'>
                         {t("navlink5")}
                       </Link>
                     </p>
