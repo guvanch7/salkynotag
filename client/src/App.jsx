@@ -301,37 +301,37 @@ function App() {
                   <MDBCol md='3' lg='4' xl='3' className='mx-auto mb-4'>
 
                     <h6 className='text-uppercase fw-bold mb-4'> {t("navlink5")}</h6>
-                    <p>
+                    <p className='pb-2'>
                       <MDBIcon color='secondary' icon='home' className='me-2' />
                       {t("address")}
                     </p>
 
-                    <p>
+                    <p className='pb-2'>
                       <MDBIcon color='secondary' icon='envelope' className='me-3' />
                       info@salkynotag.com.tm
                     </p>
-                    <p>
+                    <p className='pb-2'>
                       <MDBIcon color='secondary' icon='phone' className='me-3' />+993 12 75 41 40
                     </p>
-                    <p>
+                    <p className='pb-2'>
                       <MDBIcon color='secondary' icon='phone' className='me-3' />+993 65 50 80 60
                     </p>
                   </MDBCol>
 
                   <MDBCol md='2' lg='2' xl='2' className='mx-auto mb-4'>
                     <h6 className='text-uppercase fw-bold mb-4'>{t("company")}</h6>
-                    <p>
+                    <p className='pb-2'>
                       <Link to={'/'} className='text-reset'>
                         {t("navlink1")}
                       </Link>
                     </p>
-                    <p>
+                    <p className='pb-2'>
                       <Link to={'/about'} className='text-reset'>
                         {t("navlink2")}
                       </Link>
                     </p>
 
-                    <p>
+                    <p className='pb-2'>
                       <Link to={'/'} className='text-reset'>
                         {t("navlink4")}
                       </Link>
@@ -341,13 +341,13 @@ function App() {
                   <MDBCol md='3' lg='2' xl='2' className='mx-auto mb-4'>
                     <h6 className='text-uppercase fw-bold mb-4'> {t("additional")}</h6>
 
-                    <p>
+                    <p className='pb-2'>
                       <Link to={'/partners'} className='text-reset'>
                         {t("navlink3")}
                       </Link>
                     </p>
 
-                    <p>
+                    <p className='pb-2'>
                       <Link to={'/'} className='text-reset'>
                         {t("navlink5")}
                       </Link>
