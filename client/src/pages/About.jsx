@@ -29,24 +29,24 @@ const About = () => {
                     <MDBCol className='' lg={2}>
                         <div className='text-white'>
                             <div className='d-flex align-items-center my-4'>
-                                <h5>Наши контакты </h5>
+                                <h5>{t("contactsTitle")}</h5>
                                 <div className='linee ms-3'></div>
                             </div>
-                            <p className='fw-bold'>Телефон: +993 12 75 41 40</p>
-                            <p className='fw-light'><b className='fw-bold'>Телефон:</b> +993 65 56 80 60</p>
-                            <p className='fw-light'><b className='fw-bold'>Адрес:</b> Г. Кулиева 46 (2127) 744000, Ашхабад, Туркменистан</p>
-                            <p className='fw-light'><b className='fw-bold'>E-Mail:</b> info@salkynotag.com.tm</p>
+                            <p className='fw-bold'>{t("phone1")}</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("phone")}</b> +993 65 56 80 60</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("address")}</b> {t("addressText")}</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("email")}</b> info@salkynotag.com.tm</p>
                         </div>
 
                         <div className='text-white'>
                             <div className='d-flex my-4 align-items-center '>
-                                <h5 className=''>Часы работы</h5>
+                                <h5 className=''>{t("workingHoursTitle")}</h5>
                                 <div className='linee ms-3'></div>
                             </div>
 
-                            <p className='fw-light'><b className='fw-bold'>Пн по Пт:</b> 09:00 - 19:00</p>
-                            <p className='fw-light'><b className='fw-bold'>Суббота:</b> 09:00-14:00</p>
-                            <p className='fw-light'><b className='fw-bold'>Воскресенье:</b> Выходной</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("weekdays")}</b> 09:00 - 19:00</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("saturday")}</b> 09:00-14:00</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("sunday")}</b> {t("sundayClosed")}</p>
 
                         </div>
 
@@ -54,39 +54,36 @@ const About = () => {
 
                     </MDBCol>
                     <MDBCol className='text-white mt-4' style={{ paddingRight: 'unset' }} lg={8}>
-                        <p className='fw-light'>Компания "Salkyn Otag" специализируется на предоставлении полного спектра услуг по продаже и установке климатического оборудования, а также дальнейшей оптимизации систем отопления, кондиционирования и вентиляции помещений. Мы предлагаем инженерные решения и монтаж оборудования от мировых производителей, которые может использоваться как на производстве, так и в жилых помещениях и офисах. За многолетний период работы, наша компания успешно реализовала обширный перечень проектов различной сложности на всей территории Туркменистана. Лучше любых слов о профессионализме, ответственности и квалификации специалистов компании скажут только отзывы от наших клиентов. </p>
+                        <p className='fw-light'>{t("companyDescription")}</p>
 
                         <div className='text-end'>
                             <img src={bg} className='img-fluid image' alt="" />
                         </div>
 
-
                         <MDBRow className='mt-3 justify-content-between'>
                             <MDBCol lg={6}>
-                                <h5>Гарантия сдачи проектов в срок:</h5>
-                                <p className='fw-light'>Компания "Salkyn Otag" гарантирует сдачу проекта в срок. Мы можем себе это позволить благодаря инженерному составу и монтажным бригадам. Весь персонал компании является специалистами высокого класса с большим опытом работы.</p>
+                                <h5>{t("projectGuaranteeTitle")}</h5>
+                                <p className='fw-light'>{t("projectGuaranteeDescription")}</p>
                             </MDBCol>
 
                             <MDBCol lg={6}>
-                                <h5>Гибкая ценовая политика:</h5>
-                                <p className='fw-light'>Для каждого клиента мы составляем детальную смету, после изучения которой ни у кого не остается сомнений в обоснованности стоимости наших услуг и выборе оптимального технического решения. </p>
+                                <h5>{t("flexiblePricingTitle")}</h5>
+                                <p className='fw-light'>{t("flexiblePricingDescription")}</p>
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
                 </MDBRow>
-                {/* </MDBContainer> */}
 
-                <MDBRow className='text-white  align-items-' style={{marginTop:'10rem'}}>
+                <MDBRow className='text-white  align-items-' style={{ marginTop: '10rem' }}>
                     <MDBCol lg={12}>
                         <h4 className='w-50 mb-5'>
-                            Мы соответствуем стандарту качества системы менеджмента ISO 9001, о чем свидетельствует сертификат.
+                            {t("isoQualityStandard")}
                         </h4>
                     </MDBCol>
                     <MDBCol className='mt-' lg={7}>
-                        <h4>Команда профессионалов:</h4>
-                        <p className='fw-light mt-4'>Многолетний опыт сотрудников в сфере климатического оборудования. Профессиональное качество обслуживания, индивидуальный подход и полный контроль качества выполняемой работы.</p>
+                        <h4>{t("professionalTeamTitle")}</h4>
+                        <p className='fw-light mt-4'>{t("professionalTeamDescription")}</p>
                     </MDBCol>
-
 
                     <MDBCol className='text-center' lg={5}>
                         <img style={{ width: '20rem' }} src={sgs} className='img-fluid' alt="" />

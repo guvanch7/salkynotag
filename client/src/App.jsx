@@ -9,6 +9,7 @@ import Contacts from './pages/Contacts';
 import Services from './pages/Services';
 import Partners from './pages/Partners';
 import About from './pages/About';
+import ScrollToTop from './components/scrollTop';
 
 import Prel from './components/Preloader';
 
@@ -98,6 +99,8 @@ function App() {
   return (
     <>
       <Router>
+        <ScrollToTop />
+
         <Prel />
         <div>
 
@@ -158,8 +161,8 @@ function App() {
 
           >
             <MDBContainer fluid>
-              <MDBNavbarBrand  href="#">
-                <img src={logob}  style={{ height: '85px', transition: "0.3s ease-in-out" }}
+              <MDBNavbarBrand href="#">
+                <img src={logob} style={{ height: '85px', transition: "0.3s ease-in-out" }}
                   alt="Brand Logo" />
               </MDBNavbarBrand>
 
@@ -187,7 +190,7 @@ function App() {
                     </MDBNavbarLink>
                   </MDBNavbarItem>
 
-                 
+
 
                   <MDBNavbarItem className="me-4">
                     <MDBNavbarLink>
@@ -277,7 +280,7 @@ function App() {
             <Route path='/about' element={<About />} ></Route>
             <Route path='/services' element={<Services />} ></Route>
           </Routes>
-         
+
 
 
           <MDBFooter className=' text-center text-lg-start text-muted' style={{ backgroundColor: "rgb(11, 85, 94)" }}>
