@@ -27,6 +27,7 @@ import who from '../assets/partners/who.png'
 import aktoprak from '../assets/partners/aktoprak.png'
 import morin from '../assets/partners/morin.png'
 import chatma from '../assets/partners/chatma.png'
+import turkmenturk from '../assets/partners/turkmenturk.png'
 import './partner.css'
 
 
@@ -92,6 +93,7 @@ const Partners = () => {
                             <li class="col-padding p-3"><a class="op-08" href="#"><img src={aktoprak} className='img-fluid' alt="Clients" /></a></li>
                             <li class="col-padding p-3"><a class="op-08" href="#"><img src={morin} className='img-fluid' alt="Clients" /></a></li>
                             <li class="col-padding p-3"><a class="op-08" href="#"><img src={chatma} className='img-fluid' alt="Clients" /></a></li>
+                            <li class="col-padding  " style={{ paddingTop: '3.9rem' }}><a class="op-08" href="#"><img src={turkmenturk} className='img-fluid' alt="Clients" /></a></li>
                         </ul>
                     </MDBCol>
 
