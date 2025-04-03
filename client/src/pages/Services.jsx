@@ -44,7 +44,7 @@ const About = () => {
             <MDBContainer fluid style={{
 
                 backgroundImage: `url(${bg1})`,
-                height: '1050px ',
+                height: '1120px ',
 
                 backgroundSize: 'cover',
                 // Изображение будет растягиваться на весь блок
