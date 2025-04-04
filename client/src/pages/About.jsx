@@ -34,7 +34,7 @@ const About = () => {
                             </div>
                             <p className='fw-bold'>{t("phone1")}</p>
                             <p className='fw-light'><b className='fw-bold'>{t("phone")}</b> +993 65 56 80 60</p>
-                            <p className='fw-light'><b className='fw-bold'>{t("address")}</b> {t("addressText")}</p>
+                            <p className='fw-light'><b className='fw-bold'>{t("address2")}</b> {t("addressText")}</p>
                             <p className='fw-light'><b className='fw-bold'>{t("email")}</b> info@salkynotag.com.tm</p>
                         </div>
 

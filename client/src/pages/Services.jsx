@@ -16,13 +16,11 @@ import hammer from '../assets/icon/hammer.png'
 import tick from '../assets/icon/tick.png'
 import shield from '../assets/icon/shield.png'
 
-import bg1 from '../assets/pages/bgTemplate1.png'
-import bg2 from '../assets/pages/bgTemplate2.png'
+import bg1 from '../assets/pages/bgTemplate1.jpg'
+import bg2 from '../assets/pages/bgTemplate2.jpg'
 
 
-
-import fav from "../assets/icon/fav.png";
-
+ 
 
 
 
@@ -53,7 +51,7 @@ const About = () => {
             }} className=' bg-image '>
                 <MDBRow className='align-items-stretch mt-7 justify-content-between'>
                     <MDBCol className='px-4 mt-7' lg={7}>
-                        <h1 className='mt-7 ps-3 fw-bold text-white'>{t("servicesTitle")}</h1>
+                        <h1 data-aos="fade-up" data-aos-duration="250" className='mt-7 ps-3 fw-bold text-white'>{t("servicesTitle")}</h1>
                         <MDBRow className='mt-5 mt-7 ps-3 text-white align-items-end'>
                             <MDBCol className='p-3' data-aos="fade-up" data-aos-duration="500" lg={6}>
                                 <div className="d-flex align-items-start ">
@@ -111,11 +109,11 @@ const About = () => {
             }} className='bg-image'>
                 <MDBRow className='justify-content-end mt-7'>
                     <MDBCol className="pe-4 text-end" lg={4}>
-                        <h1 className="text-white  py-4">Процесс работы</h1>
+                        <h1 className="text-white  py-4"  data-aos="fade-left" data-aos-duration="250">{t("workProcess")}</h1>
 
-                        <div data-aos="fade-left" data-aos-duration="500" className="d-flex align-items-center justify-content-end">
+                        <div data-aos="fade-left" data-aos-duration="500" className="d-flex align-items-center py-4 justify-content-end">
                             <div className="text-white">
-                                <h4>{t("consultationTitle")}</h4>
+                                <h2>{t("consultationTitle")}</h2>
                                 <p>{t("consultationText")}</p>
                             </div>
                             <div className="icon-container ms-3">
@@ -123,9 +121,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div data-aos="fade-left" data-aos-duration="1000" className="d-flex align-items-center justify-content-end">
+                        <div data-aos="fade-left" data-aos-duration="1000" className="d-flex align-items-center py-4 justify-content-end">
                             <div className="text-white">
-                                <h4>{t("selectionTitle")}</h4>
+                                <h2>{t("selectionTitle")}</h2>
                                 <p>{t("selectionText")}</p>
                             </div>
                             <div className="icon-container ms-3">
@@ -133,9 +131,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div data-aos="fade-left" data-aos-duration="1500" className="d-flex align-items-center justify-content-end">
+                        <div data-aos="fade-left" data-aos-duration="1500" className="d-flex align-items-center py-4   justify-content-end">
                             <div className="text-white">
-                                <h4>{t("installationTitle")}</h4>
+                                <h2>{t("installationTitle")}</h2>
                                 <p>{t("installationText")}</p>
                             </div>
                             <div className="icon-container ms-3">
@@ -143,9 +141,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div data-aos="fade-left" data-aos-duration="2000" className="d-flex align-items-center justify-content-end">
+                        <div data-aos="fade-left" data-aos-duration="2000" className="d-flex align-items-center  py-4  justify-content-end">
                             <div className="text-white">
-                                <h4>{t("commissioningTitle")}</h4>
+                                <h2>{t("commissioningTitle")}</h2>
                                 <p>{t("commissioningText")}</p>
                             </div>
                             <div className="icon-container ms-3">
@@ -153,9 +151,9 @@ const About = () => {
                             </div>
                         </div>
 
-                        <div data-aos="fade-left" data-aos-duration="2500" className="d-flex align-items-center justify-content-end">
+                        <div data-aos="fade-left" data-aos-duration="2500" className="d-flex align-items-center  py-4  justify-content-end">
                             <div className="text-white">
-                                <h4>{t("maintenanceTitle")}</h4>
+                                <h2>{t("maintenanceTitle")}</h2>
                                 <p>{t("maintenanceText")}</p>
                             </div>
                             <div className="icon-container ms-3">
@@ -169,7 +167,7 @@ const About = () => {
 
 
                     <MDBCol lg={12} className='text-white mt-7'>
-                        <h1 className='mt-7 text-center'>{t("contactTitle")}</h1>
+                        <h1  data-aos="fade-up" data-aos-duration="250"  className='mt-7 text-center'>{t("contactTitle")}</h1>
                         <MDBRow className='justify-content-center mt-5 text-center'>
                             <MDBCol data-aos="fade-up" data-aos-duration="500" lg={6}>
                                 <h1>{t("supportTitle")}</h1>
@@ -190,7 +188,6 @@ const About = () => {
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
-
                 </MDBRow>
             </MDBContainer>
 
