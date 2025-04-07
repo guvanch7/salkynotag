@@ -17,7 +17,9 @@ const About = () => {
         i18n.changeLanguage(language);
     };
 
-
+    useEffect(() => {
+        AOS.init({ duration: 800 });
+    }, []);
     return (
 
         <>
@@ -26,8 +28,8 @@ const About = () => {
                 {/* <MDBContainer> */}
 
                 <MDBRow className='align-items-stretc mx-5 justify-content-center'>
-                    <MDBCol className='' lg={2}>
-                        <div className='text-white'>
+                    <MDBCol className='' data-aos="fade-up" data-aos-duration="220" lg={2}>
+                        <div className='text-white' >
                             <div className='d-flex align-items-center my-4'>
                                 <h5>{t("contactsTitle")}</h5>
                                 <div className='linee ms-3'></div>
@@ -38,7 +40,7 @@ const About = () => {
                             <p className='fw-light'><b className='fw-bold'>{t("email")}</b> info@salkynotag.com.tm</p>
                         </div>
 
-                        <div className='text-white'>
+                        <div className='text-white' data-aos="fade-up" data-aos-duration="260">
                             <div className='d-flex my-4 align-items-center '>
                                 <h5 className=''>{t("workingHoursTitle")}</h5>
                                 <div className='linee ms-3'></div>
@@ -50,25 +52,25 @@ const About = () => {
 
                         </div>
 
-                        <img src={iso} className='img-fluid mt-7' style={{ width: '19rem', borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem" }} alt="" />
+                        <img  data-aos="fade-right" data-aos-duration="500" src={iso} className='img-fluid mt-7' style={{ width: '19rem', borderTopLeftRadius: "1rem", borderBottomLeftRadius: "1rem" }} alt="" />
 
                     </MDBCol>
                     <MDBCol className='text-white mt-4' style={{ paddingRight: 'unset' }} lg={8}>
-                        <p className='fw-light'>{t("companyDescription")}</p>
+                        <p className='fw-light' data-aos="fade-up" data-aos-duration="210">{t("companyDescription")}</p>
 
                         <div className='text-end'>
-                            <img src={bg} className='img-fluid image' alt="" />
+                            <img src={bg} data-aos="fade-left" data-aos-duration="300" className='img-fluid image' alt="" />
                         </div>
 
                         <MDBRow className='mt-3 justify-content-between'>
                             <MDBCol lg={6}>
-                                <h5>{t("projectGuaranteeTitle")}</h5>
-                                <p className='fw-light'>{t("projectGuaranteeDescription")}</p>
+                                <h5 data-aos="fade-up" data-aos-duration="400">{t("projectGuaranteeTitle")}</h5>
+                                <p data-aos="fade-up" data-aos-duration="600" className='fw-light'>{t("projectGuaranteeDescription")}</p>
                             </MDBCol>
 
                             <MDBCol lg={6}>
-                                <h5>{t("flexiblePricingTitle")}</h5>
-                                <p className='fw-light'>{t("flexiblePricingDescription")}</p>
+                                <h5 data-aos="fade-up" data-aos-duration="400">{t("flexiblePricingTitle")}</h5>
+                                <p data-aos="fade-up" data-aos-duration="600" className='fw-light'>{t("flexiblePricingDescription")}</p>
                             </MDBCol>
                         </MDBRow>
                     </MDBCol>
@@ -76,17 +78,17 @@ const About = () => {
 
                 <MDBRow className='text-white  align-items-' style={{ marginTop: '10rem' }}>
                     <MDBCol lg={12}>
-                        <h4 className='w-50 mb-5'>
+                        <h4 data-aos="fade-up" data-aos-duration="300" className='w-50 mb-5'>
                             {t("isoQualityStandard")}
                         </h4>
                     </MDBCol>
                     <MDBCol className='mt-' lg={7}>
-                        <h4>{t("professionalTeamTitle")}</h4>
-                        <p className='fw-light mt-4'>{t("professionalTeamDescription")}</p>
+                        <h4 data-aos="fade-up" data-aos-duration="600">{t("professionalTeamTitle")}</h4>
+                        <p data-aos="fade-up" data-aos-duration="900" className='fw-light mt-4'>{t("professionalTeamDescription")}</p>
                     </MDBCol>
 
                     <MDBCol className='text-center' lg={5}>
-                        <img style={{ width: '20rem' }} src={sgs} className='img-fluid' alt="" />
+                        <img style={{ width: '20rem' }}  data-aos="fade-left" data-aos-duration="500" src={sgs} className='img-fluid' alt="" />
                     </MDBCol>
                 </MDBRow>
 

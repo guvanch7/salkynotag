@@ -70,7 +70,7 @@ const Partners = () => {
 
                     <MDBCol lg={12}>
 
-                        <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 mb-0">
+                        <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 row-cols-lg-8  mb-0">
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={bouygues} alt="Clients" /></a></li>
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={gazprom} alt="Clients" /></a></li>
                             <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={byy} alt="Clients" /></a></li>
