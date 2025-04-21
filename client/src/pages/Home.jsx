@@ -33,7 +33,7 @@ import "../App.css";
 
 
 
-function Home({ searchQuery, targetRef  }) {
+function Home({ searchQuery, targetRef, onAddToCart, cartItems  }) {
     const { t } = useTranslation();
     const [isFilterOpen, setIsFilterOpen] = useState(false);
     const [filters, setFilters] = useState({ type: [], brand: [], power: [], color: [] });
@@ -128,7 +128,7 @@ function Home({ searchQuery, targetRef  }) {
 
 
                         {/* Передаем состояние фильтра */}
-                        <AirConditionersList isFilterOpen={!isFilterOpen}  searchQuery={searchQuery} ref={targetRef} />
+                        <AirConditionersList   onAddToCart={onAddToCart}  isFilterOpen={!isFilterOpen}  searchQuery={searchQuery} ref={targetRef}   cartItems={cartItems} />
                     </MDBRow>
                 </MDBContainer>
 

@@ -45,10 +45,10 @@ const Partners = () => {
 
         <>
 
-            <MDBContainer className='my-4'>
+            <MDBContainer fluid className='my-4 px-8' >
                 <h1 className='text-center text-black'> {t("partners")}</h1>
                 <p className='text-center'> {t("partnerSlogan")}</p>
-                <MDBRow>
+                <MDBRow className=''>
                     <MDBCol lg={12}>
                         <h2 className='text-black'>Партнеры</h2>
                         <h4 className='text-muted fw-light'></h4>
@@ -68,36 +68,15 @@ const Partners = () => {
 
 
 
-                    <MDBCol lg={12}>
-
-                        <ul class="clients-grid grid-border row row-cols-2 row-cols-sm-3 row-cols-md-6 row-cols-lg-8  mb-0">
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={bouygues} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={gazprom} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={byy} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={georgia} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={aragatnasyk} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={kopetdag} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08 " href="#"><img className='img-fluid' src={petrogas} alt="Clients" /></a></li>
-                            <li class="col-padding" > <a class="op-08" href="#"><img className='img-fluid' src={russianPos} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={seaport} alt="Clients" /></a></li>
-                            <li class="col-padding" style={{ paddingTop: '3.3rem' }}><a class="op-08" href="#"><img className='img-fluid' src={softline} alt="Clients" /></a></li>
-                            <li class="col-padding" style={{ paddingTop: '3.9rem' }}><a class="op-08 " href="#"><img className='img-fluid' src={telecom} alt="Clients" /></a></li>
-                            <li class="col-padding"><a class="op-08" href="#"><img className='img-fluid' src={teleradio} alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={tmcell} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={toyota} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={unrcca} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={vneshka} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={gurlusyk} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={belarus} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={hyundai} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={who} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={aktoprak} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={morin} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding p-3"><a class="op-08" href="#"><img src={chatma} className='img-fluid' alt="Clients" /></a></li>
-                            <li class="col-padding  " style={{ paddingTop: '3.9rem' }}><a class="op-08" href="#"><img src={turkmenturk} className='img-fluid' alt="Clients" /></a></li>
-                        </ul>
-                    </MDBCol>
-
+                    <MDBRow className="g-0 row-cols-2 row-cols-sm-3 row-cols-md-4 row-cols-lg-6">
+                        {[bouygues, gazprom, byy, georgia, aragatnasyk, kopetdag, petrogas, russianPos, seaport, softline, telecom, teleradio, tmcell, toyota, unrcca, vneshka, gurlusyk, belarus, hyundai, who, aktoprak, morin, chatma, turkmenturk].map((logo, idx) => (
+                            <MDBCol key={idx} className="d-flex justify-content-center align-items-center p-5">
+                                <a href="#" data-aos="fade-down" data-aos-duration="500" className="op-08">
+                                    <img src={logo} alt="Client Logo" className="img-logo" />
+                                </a>
+                            </MDBCol>
+                        ))}
+                    </MDBRow>
                 </MDBRow>
             </MDBContainer>
         </>

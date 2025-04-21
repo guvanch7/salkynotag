@@ -55,11 +55,11 @@ const Contacts = () => {
                                 <img src={tiktok} style={{ width: '1.3rem' }} alt="TikTok" />
                             </a>
 
-                            <a href="https://www.facebook.com/hashtag/salkynotag/?source=feed_text&epa=HASHTAG&locale=ms_MY" className="p-1 social">
+                            <a href="https://www.facebook.com/salkynotag" className="p-1 social">
                                 <img src={facebook} style={{ width: '.7rem' }} alt="Facebook" />
                             </a>
 
-                            <a href="#" className="p-1 social">
+                            <a href="https://wa.me/99365508060" className="p-1 social">
                                 <img src={whatsapp} style={{ width: '1.6rem' }} alt="Whatsapp" />
                             </a>
                         </div>

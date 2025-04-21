@@ -12,6 +12,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
     color: [],
     homeType: '' // Теперь homeType — строка для радиокнопок
   });
+  const [scrollDirection, setScrollDirection] = useState('down');
 
 
   const { t, i18n } = useTranslation();
@@ -19,6 +20,27 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
   };
+
+  useEffect(() => {
+    let lastScrollY = window.scrollY;
+  
+    const updateScrollDirection = () => {
+      const currentScrollY = window.scrollY;
+      if (currentScrollY > lastScrollY) {
+        setScrollDirection('down');
+      } else if (currentScrollY < lastScrollY) {
+        setScrollDirection('up');
+      }
+      lastScrollY = currentScrollY;
+    };
+  
+    window.addEventListener('scroll', updateScrollDirection);
+  
+    return () => {
+      window.removeEventListener('scroll', updateScrollDirection);
+    };
+  }, []);
+  
 
   const handleCheckboxChange = (category, value) => {
     setFilters(prevFilters => {
@@ -72,7 +94,7 @@ const AirConditionerFilter = ({ onFilterChange, isFilterOpen }) => {
 
       {isFilterOpen && (
         <motion.div
-          className="filter-panel"
+          className={`filter-panel ${scrollDirection === 'up' ? 'scrolling-up' : ''}`}
           initial={{ opacity: 0, x: -50 }}
           animate={{ opacity: 1, x: 0 }}
           exit={{ opacity: 0, x: -50 }}

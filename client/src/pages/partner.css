@@ -1,35 +1,17 @@
-.grid-border {
-    overflow: inherit;
-    border-width: 1px;
-    border-color: #e9ecef;
- 
-}
+.img-logo {
+    max-height: 150px; /* можно убрать, если вообще не хочешь ограничения */
+    height: auto;
+    width: auto;
+    object-fit: contain;
+  }
+  .img-logo {
+    max-height: 150px; /* можно убрать, если вообще не хочешь ограничения */
+    height: auto;
+    width: auto;
+    object-fit: contain;
+  }
 
-.grid-border {
-    overflow: hidden;
-    border-width: 1px;
-    --cnvs-grid-border-color: var(--cnvs-contrast-900);
-    --cnvs-grid-border-color-dark: #FFF;
-   
-}
-
-.clients-grid {
-    /* padding: 20px; */
-    border: 1px;
- 
-    border-color: rgba( 0, 0, 0 );
- 
-    position: relative;
-    align-items: stretch;
-    list-style: none;
-    overflow: hidden;
-}
-
-
-.grid-border [class^=col-] {
-    margin:  50px 0px;
-    padding:   15px ;
-}
-
- 
- 
+  .px-8{
+    padding: 0 9rem;
+  }
+    

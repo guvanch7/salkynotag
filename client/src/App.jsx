@@ -12,12 +12,14 @@ import About from './pages/About';
 import ScrollToTop from './components/scrollTop';
 
 import Prel from './components/Preloader';
+import Checkout from './pages/checkout';
 
 import {
   MDBNavbar,
   MDBNavbarBrand,
   MDBNavbarNav,
   MDBInput,
+  MDBBadge,
   MDBNavbarItem,
   MDBNavbarLink,
   MDBNavbarToggler,
@@ -37,6 +39,8 @@ import {
 } from 'mdb-react-ui-kit';
 import { useTranslation } from 'react-i18next';
 // import './i18n';
+import Cart from './components/Cart';
+
 import logow from './assets/logow.png'
 import logob from './assets/logob.png'
 import tm from './assets/icon/tm.png'
@@ -55,6 +59,7 @@ function App() {
   const [openBasic, setOpenBasic] = useState(false);
   const [searchQuery, setSearchQuery] = useState('');
   const targetRef = useRef(null);
+  const [cartItems, setCartItems] = useState([]);
 
 
   const [lastScrollTop, setLastScrollTop] = useState(0);
@@ -64,6 +69,32 @@ function App() {
 
   const changeLanguage = (language) => {
     i18n.changeLanguage(language);
+  };
+
+  const handleAddToCart = (item) => {
+    setCartItems(prev => {
+      const alreadyInCart = prev.some(ci => ci.id === item.id);
+      if (alreadyInCart) return prev;
+      return [...prev, { ...item, quantity: 1 }]; // ✅ обязательно quantity: 1
+    });
+  };
+
+  const handleIncrement = (item) => {
+    setCartItems(prev =>
+      prev.map(ci => ci.id === item.id ? { ...ci, quantity: ci.quantity + 1 } : ci)
+    );
+  };
+
+  const handleDecrement = (item) => {
+    setCartItems(prev =>
+      prev.map(ci =>
+        ci.id === item.id ? { ...ci, quantity: Math.max(1, ci.quantity - 1) } : ci
+      )
+    );
+  };
+
+  const handleRemove = (item) => {
+    setCartItems(prev => prev.filter(ci => ci.id !== item.id));
   };
 
   useEffect(() => {
@@ -128,6 +159,9 @@ function App() {
 
               {/* Соц. сети */}
               <div className="social-icons d-flex align-items-center gap-3">
+
+
+
                 <a href="https://www.instagram.com/salkyn_otag/" className="p-1 social">
                   <img src={instagram} style={{ width: '1.5rem' }} alt="Instagram" />
                 </a>
@@ -243,9 +277,21 @@ function App() {
                       </MDBDropdownMenu>
                     </MDBDropdown>
                   </MDBNavbarItem>
-                  <MDBNavbarItem className="me-3">
 
-                    <form className='d-flex input-group   me-3' onSubmit={(e) => e.preventDefault()}>
+                  <MDBNavbarItem className='me-3'>
+                    <MDBNavbarLink>
+                      <Link to="/cart" className="nav-link">
+                        <MDBBadge pill color='danger'>{cartItems.length}</MDBBadge>
+                        <span>
+                          <MDBIcon size='lg' fas icon='shopping-cart' />
+                        </span>
+                      </Link>
+                    </MDBNavbarLink>
+
+                  </MDBNavbarItem>
+
+                  <MDBNavbarItem className="me-3">
+                    <form className='d-flex input-group me-3' onSubmit={(e) => e.preventDefault()}>
                       <input
                         type='search'
                         className='form-control'
@@ -274,11 +320,27 @@ function App() {
 
 
           <Routes>
-            <Route path='/' element={<Home searchQuery={searchQuery} targetRef={targetRef} />} ></Route>
+            <Route
+              path="/"
+              element={<Home searchQuery={searchQuery} targetRef={targetRef} onAddToCart={handleAddToCart} cartItems={cartItems} />}
+            />
             <Route path='/contacts' element={<Contacts />} ></Route>
             <Route path='/partners' element={<Partners />} ></Route>
             <Route path='/about' element={<About />} ></Route>
             <Route path='/services' element={<Services />} ></Route>
+            <Route
+              path="/cart"
+              element={
+                <Cart
+                  cartItems={cartItems}
+                  onIncrement={handleIncrement}
+                  onDecrement={handleDecrement}
+                  onRemove={handleRemove}
+                />
+              }
+            />
+            <Route path="/checkout" element={<Checkout />} />
+
           </Routes>
 
 
